@@ -1,0 +1,4 @@
+rootProject.name = 'SampleApp'
+
+include ':app', ':xpush-client'
+project(':xpush-client').projectDir = new File(rootProject.projectDir, '../../../android/lib')

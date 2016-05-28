@@ -1,0 +1,26 @@
+{
+  "name": "lib-xpush-react-native",
+  "version": "0.0.1",
+  "description": "xpush client for React Native",
+  "main": "xpush client for React Native",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:xpush/lib-xpush-react-native.git"
+  },
+  "keywords": [
+    "react-native",
+    "react-component",
+    "ios",
+    "android",
+    "xpush"
+  ],
+  "author": "Ali Najafizadeh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xpush/lib-xpush-react-native/issues"
+  },
+  "homepage": "https://github.com/xpush/lib-xpush-react-native"
+}
