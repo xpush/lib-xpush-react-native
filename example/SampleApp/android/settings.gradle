@@ -1,4 +1,5 @@
 rootProject.name = 'SampleApp'
 
-include ':app', ':xpush-client'
+include ':app', ':xpush-client', ':ExtraDimensions'
 project(':xpush-client').projectDir = new File(rootProject.projectDir, '../../../android/lib')
+project(':ExtraDimensions').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-extra-dimensions-android/android')

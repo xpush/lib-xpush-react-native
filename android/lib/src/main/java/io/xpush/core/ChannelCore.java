@@ -38,6 +38,7 @@ public class ChannelCore {
     public ChannelCore(String appId, String mUserId, String mDeviceId, String channelId, String serveUrl, String serverName) {
         this();
         this.mAppId = appId;
+        this.mUserId = mUserId;
         this.mDeviceId = mDeviceId;
         this.mChannelId = channelId;
         this.mServerUrl = serveUrl;
@@ -105,9 +106,7 @@ public class ChannelCore {
 
         try {
 
-            //user.put("I", xpushSession.getImage());
             user.put("U", mUserId);
-            //user.put("NM", xpushSession.getName());
 
             data.put("UO", user);
             data.put("MG", message);

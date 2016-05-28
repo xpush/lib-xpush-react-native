@@ -1,8 +1,11 @@
 {
-  "name": "lib-xpush-react-native",
+  "name": "react-native-xpush-client",
   "version": "0.0.1",
   "description": "xpush client for React Native",
-  "main": "xpush client for React Native",
+  "main": "lib",
+  "directories": {
+    "lib": "lib"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
