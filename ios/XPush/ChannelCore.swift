@@ -39,7 +39,7 @@ class ChannelCore: NSObject {
     self.mServerName = mServerName;
   };
   
-  internal func connect(callback: RCTResponseSenderBlock){
+  internal func connect(handlers: [String:NormalCallback]){
     let url = self.mServerUrl!;
     
     var params:[String:AnyObject] = [String:AnyObject]();
@@ -48,24 +48,11 @@ class ChannelCore: NSObject {
     params["S"] = self.mServerName;
     params["D"] = self.mDeviceId;
     params["U"] = self.mUserId;
-    self.connectionSuccessCallback = callback;
     
     socket = SocketIOClient(socketURL: NSURL(string:url)!, options:[.Log(true), .ForceNew(true), .ConnectParams(params), .Nsp("/channel")] );
     
-    socket!.on("connect") {[weak self] data, ack in
-      print("socket connected", terminator: "")
-      self!.connectionSuccessCallback!(["success"]);
-    }
-    
-    socket!.on("disconnect") { data, ack in
-      print("socket disconnected", terminator: "");
-      self.connectionSuccessCallback!(["error"]);
-    }
-    
-    socket?.on("message") {[weak self] data, ack in
-      if let dt = data[0] as? [String:AnyObject] {
-        print(dt);
-      }
+    for handler in handlers {
+      socket?.on(handler.0, callback: handler.1);
     }
     
     self.socket.connect();
