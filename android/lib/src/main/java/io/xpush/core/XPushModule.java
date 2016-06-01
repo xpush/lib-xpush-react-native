@@ -147,12 +147,12 @@ public class XPushModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void test(){
-        System.out.println("TEST");
+    public void disconnect(){
+        mChannelCore.disconnect();
     }
 
     @ReactMethod
-         public void send(String message){
+    public void send(String message){
         if( mChannelCore != null ){
             mChannelCore.sendMessage(message);
         }

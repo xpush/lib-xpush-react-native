@@ -64,4 +64,8 @@ class XPushCore: NSObject {
   @objc func send(message: String){
     self.channelCore.send(message);
   }
+  
+  @objc func disconnect(){
+    self.channelCore.disconnect();
+  }
 }

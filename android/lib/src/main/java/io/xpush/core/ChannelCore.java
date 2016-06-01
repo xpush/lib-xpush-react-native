@@ -204,7 +204,6 @@ public class ChannelCore {
         }
     }
 
-
     public void channelJoin(ArrayList<String> userIdArrayList, final CallbackEvent callback) {
 
         JSONArray userArray = new JSONArray();

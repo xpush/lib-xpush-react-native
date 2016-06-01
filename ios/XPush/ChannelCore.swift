@@ -29,6 +29,8 @@ class ChannelCore: NSObject {
   var mServerName: String?;
   var connectionSuccessCallback: RCTResponseSenderBlock!;
   
+  var mEvents: [String:NormalCallback]!;
+  
   /// Type safe way to create a new SocketIOClient. opts can be omitted
   internal init(mAppId: String, mUserId: String, mDeviceId: String, mChannelId: String, mServerUrl: String, mServerName: String) {
     self.mAppId = mAppId;
@@ -51,6 +53,8 @@ class ChannelCore: NSObject {
     
     socket = SocketIOClient(socketURL: NSURL(string:url)!, options:[.Log(true), .ForceNew(true), .ConnectParams(params), .Nsp("/channel")] );
     
+    mEvents = handlers;
+    
     for handler in handlers {
       socket?.on(handler.0, callback: handler.1);
     }
@@ -59,17 +63,34 @@ class ChannelCore: NSObject {
   };
   
   internal func send(message:String){
-    var json:[String:AnyObject] = [String:AnyObject]();
-    var data:[String:AnyObject] = [String:AnyObject]();
-    var user:[String:AnyObject] = [String:AnyObject]();
+    if self.socket != nil {
+      var json:[String:AnyObject] = [String:AnyObject]();
+      var data:[String:AnyObject] = [String:AnyObject]();
+      var user:[String:AnyObject] = [String:AnyObject]();
     
-    user["U"] = self.mUserId;
-    data["UO"] = user;
-    data["MG"] = message;
+      user["U"] = self.mUserId;
+      data["UO"] = user;
+      data["MG"] = message;
     
-    json["DT"] = data;
-    json["NM"] = "message";
+      json["DT"] = data;
+      json["NM"] = "message";
     
-    self.socket.emit("send", json );
+      self.socket.emit("send", json );
+    }
+  }
+  
+  internal func disconnect(){
+    if self.socket != nil {
+      
+      for handler in self.mEvents {
+        self.off(handler.0);
+      }
+      
+      self.socket.disconnect();
+    }
+  }
+  
+  internal func off(event:String) {
+    self.socket.off(event);
   }
 }
