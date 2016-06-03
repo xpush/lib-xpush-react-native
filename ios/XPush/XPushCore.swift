@@ -65,6 +65,15 @@ class XPushCore: NSObject {
     self.channelCore.send(message);
   }
   
+  @objc func getChannelInfo(callback: RCTResponseSenderBlock){
+    
+    func cb(data:[String:AnyObject]) -> Void {
+      callback([data]);
+    };
+    
+    self.channelCore.channelGet(cb);
+  }
+  
   @objc func disconnect(){
     self.channelCore.disconnect();
   }

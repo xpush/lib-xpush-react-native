@@ -59,6 +59,11 @@ class Chat extends Component {
       this.setState({
         typingMessage: '',
       });
+
+      XPush.getChannelInfo('channel01', function(data){
+        console.log( data );
+      });
+
     }, 3000); // simulating network
 
     XPush.connect( 'channel01', function(err, data){

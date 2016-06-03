@@ -15,5 +15,6 @@
 RCT_EXTERN_METHOD(connect:(NSDictionary*)config callback:(RCTResponseSenderBlock)callback)
 RCT_EXTERN_METHOD(send:(NSString*)message)
 RCT_EXTERN_METHOD(disconnect)
+RCT_EXTERN_METHOD(getChannelInfo:(RCTResponseSenderBlock)callback)
 
 @end

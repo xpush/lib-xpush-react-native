@@ -77,7 +77,7 @@ class ChannelCore: NSObject {
     
       self.socket.emit("send", json );
     }
-  }
+  };
   
   internal func disconnect(){
     if self.socket != nil {
@@ -88,9 +88,17 @@ class ChannelCore: NSObject {
       
       self.socket.disconnect();
     }
-  }
+  };
   
   internal func off(event:String) {
     self.socket.off(event);
+  };
+
+  internal func channelGet(callback:([String:AnyObject]) -> Void){
+    self.socket.emitWithAck("channel.get")(timeoutAfter: 0) {data in
+      if let res = data[0] as? [String:AnyObject] {
+        callback(res);
+      }
+    }
   }
 }
