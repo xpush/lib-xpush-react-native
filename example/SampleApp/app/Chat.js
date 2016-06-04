@@ -60,8 +60,10 @@ class Chat extends Component {
         typingMessage: '',
       });
 
-      XPush.getChannelInfo('channel01', function(data){
-        console.log( data );
+      XPush.join('channel01',['stjune'], function(data){
+        XPush.getInfo('channel01', function(data){
+          console.log( data );
+        });
       });
 
     }, 3000); // simulating network

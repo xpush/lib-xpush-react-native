@@ -73,6 +73,15 @@ class XPushCore: NSObject {
     
     self.channelCore.channelGet(cb);
   }
+
+  @objc func joinChannel(users:NSArray, callback: RCTResponseSenderBlock){
+    
+    func cb(data:[String:AnyObject]) -> Void {
+      callback([data]);
+    };
+    
+    self.channelCore.channelJoin(users,callback: cb);
+  }
   
   @objc func disconnect(){
     self.channelCore.disconnect();

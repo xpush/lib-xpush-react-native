@@ -101,4 +101,16 @@ class ChannelCore: NSObject {
       }
     }
   }
+  
+  internal func channelJoin(users:NSArray, callback:([String:AnyObject]) -> Void){
+    var json:[String:AnyObject] = [String:AnyObject]();
+    //json["U"] = param.valueForKey("users");
+    json["U"] = users;
+    
+    self.socket.emitWithAck("channel.join", json)(timeoutAfter: 0) {data in
+      if let res = data[0] as? [String:AnyObject] {
+        callback(res);
+      }
+    }
+  }
 }
