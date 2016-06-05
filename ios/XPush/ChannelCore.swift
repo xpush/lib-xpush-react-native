@@ -113,4 +113,12 @@ class ChannelCore: NSObject {
       }
     }
   }
+  
+  internal func channelLeave(callback:([String:AnyObject]) -> Void){
+    self.socket.emitWithAck("channel.leave")(timeoutAfter: 0) {data in
+      if let res = data[0] as? [String:AnyObject] {
+        callback(res);
+      }
+    }
+  }
 }
