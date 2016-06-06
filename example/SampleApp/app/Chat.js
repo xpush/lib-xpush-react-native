@@ -61,6 +61,7 @@ class Chat extends Component {
       });
 
       XPush.join('channel01',['stjune'], function(data){
+        /**
         XPush.getInfo('channel01', function(data){
           console.log( data );
 
@@ -71,6 +72,7 @@ class Chat extends Component {
           }, 1000);
 
         });
+        */
       });
 
     }, 3000); // simulating network

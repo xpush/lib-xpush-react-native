@@ -96,8 +96,6 @@ public class XPushModule extends ReactContextBaseJavaModule {
                 //connectionPromise.reject(e);
                 connectionCallback.invoke("error");
             }
-
-            //sendEvent(mReactContext, Socket.EVENT_CONNECT_ERROR, null);
         }
     };
 
@@ -105,9 +103,6 @@ public class XPushModule extends ReactContextBaseJavaModule {
         @Override
 
         public void call(Object... args) {
-            //System.out.println(Socket.EVENT_CONNECT );
-            //sendEvent(mReactContext, Socket.EVENT_CONNECT, null);
-            //connectionPromise.resolve("success");
             connectionCallback.invoke("success");
         }
     };
@@ -134,6 +129,8 @@ public class XPushModule extends ReactContextBaseJavaModule {
                     e.printStackTrace();
                 }
                 WritableMap map = Arguments.fromBundle(bundle);
+
+
                 sendEvent(mReactContext, "xpush:message", map);
             }
         }
@@ -147,11 +144,6 @@ public class XPushModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void disconnect(){
-        mChannelCore.disconnect();
-    }
-
-    @ReactMethod
     public void send(String message){
         if( mChannelCore != null ){
             mChannelCore.sendMessage(message);
@@ -159,7 +151,7 @@ public class XPushModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void join(ReadableArray users, final Callback callback){
+    public void joinChannel(ReadableArray users, final Callback callback){
         if( mChannelCore != null ){
             ArrayList<String> userArrayList = new ArrayList<>();
             for ( int inx = 0 ; inx < users.size() ; inx++){
@@ -171,7 +163,8 @@ public class XPushModule extends ReactContextBaseJavaModule {
                 mChannelCore.channelJoin(userArrayList, new CallbackEvent() {
                     @Override
                     public void call(Object... args) {
-                        callback.invoke("ok");
+                        JSONObject response = (JSONObject) args[0];
+                        callback.invoke(response);
                     }
                 });
             }

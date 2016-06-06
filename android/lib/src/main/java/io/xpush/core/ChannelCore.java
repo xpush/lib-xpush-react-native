@@ -38,7 +38,6 @@ public class ChannelCore {
     public ChannelCore(String appId, String mUserId, String mDeviceId, String channelId, String serveUrl, String serverName) {
         this();
         this.mAppId = appId;
-        this.mUserId = mUserId;
         this.mDeviceId = mDeviceId;
         this.mChannelId = channelId;
         this.mServerUrl = serveUrl;
@@ -106,7 +105,9 @@ public class ChannelCore {
 
         try {
 
+            //user.put("I", xpushSession.getImage());
             user.put("U", mUserId);
+            //user.put("NM", xpushSession.getName());
 
             data.put("UO", user);
             data.put("MG", message);
@@ -204,6 +205,7 @@ public class ChannelCore {
         }
     }
 
+
     public void channelJoin(ArrayList<String> userIdArrayList, final CallbackEvent callback) {
 
         JSONArray userArray = new JSONArray();
@@ -222,19 +224,7 @@ public class ChannelCore {
             @Override
             public void call(Object... args) {
                 JSONObject response = (JSONObject) args[0];
-
-                Log.d(TAG, response.toString() );
-                if (response.has("status")) {
-                    try {
-                        if ("ok".equalsIgnoreCase(response.getString("status"))) {
-                            callback.call();
-                        } else {
-                            callback.call();
-                        }
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                }
+                callback.call(response);
             }
         });
     }
