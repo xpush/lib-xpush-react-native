@@ -170,4 +170,18 @@ public class XPushModule extends ReactContextBaseJavaModule {
             }
         }
     }
+
+    @ReactMethod
+    public void leaveChannel(final Callback callback){
+        if( mChannelCore != null ){
+
+            mChannelCore.channelLeave(new CallbackEvent() {
+                @Override
+                public void call(Object... args) {
+                    JSONObject response = (JSONObject) args[0];
+                    callback.invoke(response);
+                }
+            });
+        }
+    }
 }

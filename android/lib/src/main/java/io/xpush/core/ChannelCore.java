@@ -258,20 +258,7 @@ public class ChannelCore {
             @Override
             public void call(Object... args) {
                 JSONObject response = (JSONObject) args[0];
-
-                if (response.has("status")) {
-                    try {
-                        if ("ok".equalsIgnoreCase(response.getString("status"))) {
-                            callback.call();
-                        } else {
-                            if (response.has("message") && "ERR-NOTEXIST".equals(response.getString("message") ) ) {
-                                callback.call();
-                            }
-                        }
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                }
+                callback.call(response);
             }
         });
     }
