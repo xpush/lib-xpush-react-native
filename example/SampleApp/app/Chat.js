@@ -20,8 +20,7 @@ var XPush = require( 'react-native-xpush-client' );
 
 var STATUS_BAR_HEIGHT = Navigator.NavigationBar.Styles.General.StatusBarHeight;
 if (Platform.OS === 'android') {
-  var ExtraDimensions = require('react-native-extra-dimensions-android');
-  var STATUS_BAR_HEIGHT = ExtraDimensions.get('STATUS_BAR_HEIGHT');
+  var STATUS_BAR_HEIGHT = 64;
 }
 
 var userId = 'user01';

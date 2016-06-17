@@ -39,6 +39,7 @@ public class ChannelCore {
         this();
         this.mAppId = appId;
         this.mDeviceId = mDeviceId;
+        this.mUserId = mUserId;
         this.mChannelId = channelId;
         this.mServerUrl = serveUrl;
         this.mServerName = serverName;

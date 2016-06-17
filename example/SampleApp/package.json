@@ -6,11 +6,10 @@
     "start": "node node_modules/react-native/local-cli/cli.js start"
   },
   "dependencies": {
-    "react": "^15.0.2",
-    "react-native": "^0.26.2",
+    "react": "^15.1.0",
+    "react-native": "^0.27.2",
     "react-native-xpush-client": "../../",
     "react-native-gifted-messenger": "0.1.4",
-    "react-native-communications": "^1.0.1",
-    "react-native-extra-dimensions-android": "^0.17.0"
+    "react-native-communications": "^1.0.1"
   }
 }

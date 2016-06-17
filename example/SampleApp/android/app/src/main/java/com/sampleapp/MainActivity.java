@@ -7,7 +7,6 @@ import com.facebook.react.shell.MainReactPackage;
 import java.util.Arrays;
 import java.util.List;
 
-import ca.jaysoo.extradimensions.ExtraDimensionsPackage;
 import io.xpush.core.XPushPackage;
 
 public class MainActivity extends ReactActivity {
@@ -38,8 +37,7 @@ public class MainActivity extends ReactActivity {
     protected List<ReactPackage> getPackages() {
         return Arrays.<ReactPackage>asList(
             new MainReactPackage(),
-            new ExtraDimensionsPackage(this),
-            new XPushPackage()
+                new XPushPackage()
         );
     }
 }
