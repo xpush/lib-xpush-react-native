@@ -82,6 +82,15 @@ class XPushCore: NSObject {
     
     self.channelCore.channelJoin(users,callback: cb);
   }
+
+  @objc func banFromChannel(users:NSArray, callback: RCTResponseSenderBlock){
+    
+    func cb(res:[String:AnyObject]) -> Void {
+      callback([res]);
+    };
+    
+    self.channelCore.banFromChannel(users,callback: cb);
+  }
   
   @objc func leaveChannel(callback: RCTResponseSenderBlock){
     

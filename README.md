@@ -16,13 +16,13 @@ http://xpush.github.io/about/
 
 1. Open up your project in xcode and right click the package.
  - Click **Add files to 'Your project name'**
- - Navigate to **/node_modules/react-native-xpush-client/ios**
+ - Navigate to **/node_modules/react-native-xpush-client/ios/XPush**
  - Click 'Add'
  - Click your project in the navigator on the left and go to **build settings**
 
 2. Search for **Objective-C Bridging Header**
  - Double click on the empty column
- - Enter **node_modules/react-native-xpush-client/ios/XPushBridge.h**
+ - Enter **../node_modules/react-native-xpush-client/ios/XPush/XPushBridge.h**
 
 ### Android
 

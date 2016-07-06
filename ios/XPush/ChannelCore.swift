@@ -113,6 +113,17 @@ class ChannelCore: NSObject {
       }
     }
   }
+
+  internal func banFromChannel(users:NSArray, callback:([String:AnyObject]) -> Void){
+    var json:[String:AnyObject] = [String:AnyObject]();
+    json["U"] = users;
+    
+    self.socket.emitWithAck("channel.ban", json)(timeoutAfter: 0) {data in
+      if let res = data[0] as? [String:AnyObject] {
+        callback(res);
+      }
+    }
+  }
   
   internal func channelLeave(callback:([String:AnyObject]) -> Void){
     self.socket.emitWithAck("channel.leave")(timeoutAfter: 0) {data in
