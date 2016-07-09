@@ -59,19 +59,26 @@ class Chat extends Component {
         typingMessage: '',
       });
 
-      XPush.join('channel01',['stjune'], function(data){
-        /**
+      XPush.join('channel01',['user01','stjune', 'james'], function(data){
         XPush.getInfo('channel01', function(data){
-          console.log( data );
 
+          /**
           setTimeout(() => {
             XPush.leave('channel01', function(data){
               console.log( data );
             });
           }, 1000);
+          */
+
+          /**
+          setTimeout(() => {
+            XPush.ban('channel01', ['user01','stjune'], function(data){
+              console.log( data );
+            });
+          }, 1000);
+          */
 
         });
-        */
       });
 
     }, 3000); // simulating network

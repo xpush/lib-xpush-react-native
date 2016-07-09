@@ -230,6 +230,29 @@ public class ChannelCore {
         });
     }
 
+    public void banFromChannel(ArrayList<String> userIdArrayList, final CallbackEvent callback) {
+
+        JSONArray userArray = new JSONArray();
+        for( String userId : userIdArrayList ){
+            userArray.put(userId);
+        }
+
+        JSONObject data = new JSONObject();
+        try {
+            data.put( "U", userArray );
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        mChannelSocket.emit("channel.ban", data, new Ack() {
+            @Override
+            public void call(Object... args) {
+                JSONObject response = (JSONObject) args[0];
+                callback.call(response);
+            }
+        });
+    }
+
     public void channelGet(final CallbackEvent callback) {
 
         mChannelSocket.emit("channel.get", new Ack() {

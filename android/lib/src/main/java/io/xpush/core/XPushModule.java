@@ -172,12 +172,31 @@ public class XPushModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-         public void leaveChannel(final Callback callback){
+    public void leaveChannel(final Callback callback){
         if( mChannelCore != null ){
 
             mChannelCore.channelLeave(new CallbackEvent() {
                 @Override
                 public void call(Object... args) {
+                    JSONObject response = (JSONObject) args[0];
+                    callback.invoke(response);
+                }
+            });
+        }
+    }
+
+    @ReactMethod
+    public void banFromChannel(ReadableArray users, final Callback callback){
+        if( mChannelCore != null ){
+
+            ArrayList<String> userArrayList = new ArrayList<>();
+            for ( int inx = 0 ; inx < users.size() ; inx++){
+                userArrayList.add( users.getString(inx) );
+            }
+
+            mChannelCore.banFromChannel(userArrayList, new CallbackEvent() {
+                @Override
+                public void call (Object...args){
                     JSONObject response = (JSONObject) args[0];
                     callback.invoke(response);
                 }
