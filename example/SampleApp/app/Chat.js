@@ -17,11 +17,25 @@ var GiftedMessenger = require('react-native-gifted-messenger');
 var Communications = require('react-native-communications');
 var XPush = require( 'react-native-xpush-client' );
 
+var ImagePicker = require('react-native-image-picker');
+import ActionButton from 'react-native-action-button';
+
 
 var STATUS_BAR_HEIGHT = Navigator.NavigationBar.Styles.General.StatusBarHeight;
 if (Platform.OS === 'android') {
-  var STATUS_BAR_HEIGHT = 64;
+  STATUS_BAR_HEIGHT = 64;
 }
+
+var options = {
+  title: 'Select Avatar',
+  customButtons: {
+    'Choose Photo from Facebook': 'fb',
+  },
+  storageOptions: {
+    skipBackup: true,
+    path: 'images'
+  }
+};
 
 var userId = 'user01';
 var deviceId = 'web';
@@ -70,13 +84,11 @@ class Chat extends Component {
           }, 1000);
           */
 
-          /**
           setTimeout(() => {
             XPush.ban('channel01', ['user01','stjune'], function(data){
               console.log( data );
             });
           }, 1000);
-          */
 
         });
       });
@@ -240,39 +252,47 @@ class Chat extends Component {
 
   render() {
     return (
-      <GiftedMessenger
-        ref={(c) => this._GiftedMessenger = c}
+      <View style={{flex:1}}>
+        <GiftedMessenger
+          ref={(c) => this._GiftedMessenger = c}
 
-        styles={{
-          bubbleRight: {
-            marginLeft: 70,
-            backgroundColor: '#007aff',
-          },
-        }}
+          styles={{
+            bubbleRight: {
+              marginLeft: 70,
+              backgroundColor: '#007aff',
+            },
+          }}
 
-        autoFocus={false}
-        messages={this.state.messages}
-        handleSend={this.handleSend.bind(this)}
-        onErrorButtonPress={this.onErrorButtonPress.bind(this)}
-        maxHeight={Dimensions.get('window').height - Navigator.NavigationBar.Styles.General.NavBarHeight - STATUS_BAR_HEIGHT}
+          autoFocus={false}
+          messages={this.state.messages}
+          handleSend={this.handleSend.bind(this)}
+          onErrorButtonPress={this.onErrorButtonPress.bind(this)}
+          maxHeight={Dimensions.get('window').height - STATUS_BAR_HEIGHT}
 
-        loadEarlierMessagesButton={!this.state.allLoaded}
-        onLoadEarlierMessages={this.onLoadEarlierMessages.bind(this)}
+          loadEarlierMessagesButton={!this.state.allLoaded}
+          onLoadEarlierMessages={this.onLoadEarlierMessages.bind(this)}
 
-        senderName='Awesome Developer'
-        senderImage={null}
-        onImagePress={this.onImagePress}
-        displayNames={true}
+          senderName='Awesome Developer'
+          senderImage={null}
+          onImagePress={this.onImagePress}
+          displayNames={true}
 
-        parseText={true} // enable handlePhonePress, handleUrlPress and handleEmailPress
-        handlePhonePress={this.handlePhonePress}
-        handleUrlPress={this.handleUrlPress}
-        handleEmailPress={this.handleEmailPress}
+          parseText={true} // enable handlePhonePress, handleUrlPress and handleEmailPress
+          handlePhonePress={this.handlePhonePress}
+          handleUrlPress={this.handleUrlPress}
+          handleEmailPress={this.handleEmailPress}
 
-        isLoadingEarlierMessages={this.state.isLoadingEarlierMessages}
+          isLoadingEarlierMessages={this.state.isLoadingEarlierMessages}
 
-        typingMessage={this.state.typingMessage}
-      />
+          typingMessage={this.state.typingMessage}
+        />
+        <ActionButton 
+          buttonColor="rgba(231,76,60,1)" 
+          onPress={ this.handleImagePicker.bind(this) }
+          icon={<Text>Image</Text>}
+          offsetY={100}
+        />
+      </View>
     );
   }
 
@@ -310,6 +330,32 @@ class Chat extends Component {
 
   handleEmailPress(email) {
     Communications.email(email, null, null, null, null);
+  }
+
+  handleImagePicker(){
+    ImagePicker.showImagePicker(options, (response) => {
+      console.log('Response = ', response);
+
+      if (response.didCancel) {
+        console.log('User cancelled photo picker');
+      }
+      else if (response.error) {
+        console.log('ImagePicker Error: ', response.error);
+      }
+      else if (response.customButton) {
+        console.log('User tapped custom button: ', response.customButton);
+      }
+      else {
+        console.log( response.uri );
+        XPush.sendImage( response.uri,
+          function( progress ){
+            console.log( progress );
+          },function( err, result ){
+            console.log( result );
+          }
+        );
+      }
+    });
   }
 
 }
