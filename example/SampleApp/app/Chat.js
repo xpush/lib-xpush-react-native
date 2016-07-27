@@ -74,8 +74,8 @@ class Chat extends Component {
       });
 
       XPush.join('channel01',['user01','stjune', 'james'], function(data){
-        XPush.getInfo('channel01', function(data){
 
+        XPush.getInfo('channel01', function(data){
           /**
           setTimeout(() => {
             XPush.leave('channel01', function(data){

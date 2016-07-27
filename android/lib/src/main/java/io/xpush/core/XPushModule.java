@@ -164,7 +164,7 @@ public class XPushModule extends ReactContextBaseJavaModule {
                     @Override
                     public void call(Object... args) {
                         JSONObject response = (JSONObject) args[0];
-                        callback.invoke(response);
+                        callback.invoke(response.toString());
                     }
                 });
             }
@@ -179,7 +179,7 @@ public class XPushModule extends ReactContextBaseJavaModule {
                 @Override
                 public void call(Object... args) {
                     JSONObject response = (JSONObject) args[0];
-                    callback.invoke(response);
+                    callback.invoke(response.toString());
                 }
             });
         }
@@ -198,7 +198,7 @@ public class XPushModule extends ReactContextBaseJavaModule {
                 @Override
                 public void call (Object...args){
                     JSONObject response = (JSONObject) args[0];
-                    callback.invoke(response);
+                    callback.invoke(response.toString());
                 }
             });
         }
@@ -212,7 +212,7 @@ public class XPushModule extends ReactContextBaseJavaModule {
                 @Override
                 public void call(Object... args) {
                     JSONObject response = (JSONObject) args[0];
-                    callback.invoke(response);
+                    callback.invoke(response.toString());
                 }
             });
         }
