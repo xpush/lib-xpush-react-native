@@ -35,7 +35,7 @@ import io.socket.engineio.client.EngineIOException;
 public class XPushModule extends ReactContextBaseJavaModule {
 
 
-    private static final String REACT_CLASS = "XPushNativeAndroid";
+    private static final String REACT_CLASS = "XPushCore";
 
     private static final String CONTEXT_GLOBAL = "global";
     private static final String CONTEXT_CHANNEL = "channel";
