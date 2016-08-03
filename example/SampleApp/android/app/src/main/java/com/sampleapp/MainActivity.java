@@ -1,6 +1,7 @@
 package com.sampleapp;
 
 import com.facebook.react.ReactActivity;
+import io.xpush.XPushPackage ;
 import com.imagepicker.ImagePickerPackage;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
@@ -38,6 +39,7 @@ public class MainActivity extends ReactActivity {
     protected List<ReactPackage> getPackages() {
         return Arrays.<ReactPackage>asList(
             new MainReactPackage(),
+            new XPushPackage (),
             new ImagePickerPackage(),
             new XPushPackage ()
         );

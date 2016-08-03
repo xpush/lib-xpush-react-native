@@ -11,6 +11,8 @@ import {
   View,
   Text,
   Navigator,
+  PushNotificationIOS,
+  AlertIOS,
 } from 'react-native';
 
 var GiftedMessenger = require('react-native-gifted-messenger');
@@ -58,7 +60,39 @@ class Chat extends Component {
 
   }
 
+  componentWillMount() {
+    // Add listener for local notifications
+    PushNotificationIOS.addEventListener('localNotification', this._onLocalNotification);
+  }
+
+  componentWillUnmount() {
+    // Remove listener for local notifications
+    this._isMounted = false;
+    PushNotificationIOS.removeEventListener('localNotification', this._onLocalNotification);
+  }
+
+  _sendLocalNotification() {
+    PushNotificationIOS.presentLocalNotification({
+      alertBody: "Testing Application Badge Icon becomes 3!",
+      applicationIconBadgeNumber: 3
+    });
+  }
+
+  _onLocalNotification(notification){
+
+    console.log( notification );
+    AlertIOS.alert(
+      'Local Notification Received',
+      'Alert message: ' + notification.getMessage(),
+      [{
+        text: 'Dismiss',
+        onPress: null,
+      }]
+    );
+  }
+
   componentDidMount() {
+
     this._isMounted = true;
     var self = this;
 
@@ -117,10 +151,6 @@ class Chat extends Component {
         }
       }); 
     });  
-  }
-
-  componentWillUnmount() {
-    this._isMounted = false;
   }
 
   getInitialMessages() {
@@ -285,6 +315,13 @@ class Chat extends Component {
           isLoadingEarlierMessages={this.state.isLoadingEarlierMessages}
 
           typingMessage={this.state.typingMessage}
+        />
+        <ActionButton 
+          buttonColor="rgba(76,76,60,1)" 
+          onPress={ this._sendLocalNotification.bind(this) }
+          icon={<Text>Notify</Text>}
+          offsetX={100}
+          offsetY={100}
         />
         <ActionButton 
           buttonColor="rgba(231,76,60,1)" 
