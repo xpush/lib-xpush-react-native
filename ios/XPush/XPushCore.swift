@@ -9,11 +9,10 @@
 import Foundation
 
 @objc(XPushCore)
-class XPushCore: NSObject {
+class XPushCore: RCTEventEmitter {
     
   var channelCore: ChannelCore!
   var connectionSocket: String!
-  var bridge: RCTBridge!
   var connectionSuccessCallback: RCTResponseSenderBlock!
   
   var onMessage: NormalCallback!
@@ -41,9 +40,13 @@ class XPushCore: NSObject {
       
     self.onMessage = {data, ack in
       if let dt = data[0] as? [String:AnyObject] {
-        self.bridge.eventDispatcher().sendDeviceEventWithName("xpush:message", body: dt)
+        self.sendEventWithName("xpush:message", body: dt)
       }
     };
+  }
+  
+  override func supportedEvents() -> [String]! {
+    return ["xpush:message"]
   }
   
   @objc func connect(config: NSDictionary, callback: RCTResponseSenderBlock) -> Void {

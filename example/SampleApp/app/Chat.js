@@ -132,7 +132,6 @@ class Chat extends Component {
     XPush.connect( 'channel01', function(err, data){
 
       XPush.onMessage( function(data){
-
         console.log( data );
 
         // make sure that your message contains :

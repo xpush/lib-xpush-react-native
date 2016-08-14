@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 #import "RCTBridgeModule.h"
+#import "RCTEventEmitter.h"
 
 @interface RCT_EXTERN_MODULE(XPushCore, NSObject)
 
