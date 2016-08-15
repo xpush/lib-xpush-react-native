@@ -26,17 +26,30 @@ class XPushCore: RCTEventEmitter {
   func initHanlder() -> Void {
       
     self.onConnectSuccess = {data, ack in
-      self.connectionSuccessCallback!(["success"]);
+      if self.connectionSuccessCallback != nil {
+        self.connectionSuccessCallback!(["success"]);
+        self.connectionSuccessCallback = nil;
+      }
     };
       
     self.onConnectError = {data, ack in
-      self.connectionSuccessCallback!(["error"]);
+      if self.connectionSuccessCallback != nil {
+        self.connectionSuccessCallback!(["error"]);
+        self.connectionSuccessCallback = nil;
+      } else {
+        if let dt = data[0] as? [String:AnyObject] {
+          self.sendEventWithName("xpush:connect_error", body: dt);
+        }
+      }
     };
-      
+    
     self.onConnectTimeout = {data, ack in
-      self.connectionSuccessCallback!(["error"]);
+      if self.connectionSuccessCallback != nil {
+        self.connectionSuccessCallback!(["error"]);
+        self.connectionSuccessCallback = nil;
+      }
     };
-      
+    
       
     self.onMessage = {data, ack in
       if let dt = data[0] as? [String:AnyObject] {
@@ -45,8 +58,9 @@ class XPushCore: RCTEventEmitter {
     };
   }
   
+  // Event list for Handling RCTEvent
   override func supportedEvents() -> [String]! {
-    return ["xpush:message"]
+    return ["xpush:message", "xpush:connect_error"]
   }
   
   @objc func connect(config: NSDictionary, callback: RCTResponseSenderBlock) -> Void {
