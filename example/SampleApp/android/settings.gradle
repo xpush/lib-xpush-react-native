@@ -1,5 +1,5 @@
 rootProject.name = 'SampleApp'
 
 include ':app', ':xpush-client', ':react-native-image-picker'
-project(':xpush-client').projectDir = new File(settingsDir, '../node_modules/react-native-xpush-client/android/lib')
+project(':xpush-client').projectDir = new File(settingsDir, '../node_modules/react-native-xpush-client/android')
 project(':react-native-image-picker').projectDir = new File(settingsDir, '../node_modules/react-native-image-picker/android')
