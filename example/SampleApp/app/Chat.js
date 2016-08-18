@@ -203,8 +203,7 @@ class Chat extends Component {
   }
 
   handleSend(message = {}) {
-
-    XPush.send( message.text );
+    XPush.send( message );
 
     // Your logic here
     // Send message.text to your server

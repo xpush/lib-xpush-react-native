@@ -79,6 +79,22 @@ class ChannelCore: NSObject {
     }
   };
   
+  internal func sendWithData(param:[String:AnyObject]){
+    if self.socket != nil {
+      var json:[String:AnyObject] = [String:AnyObject]();
+      var user:[String:AnyObject] = [String:AnyObject]();
+      var data = param;
+      
+      user["U"] = self.mUserId;
+      data["UO"] = user;
+      
+      json["DT"] = data;
+      json["NM"] = "message";
+      
+      self.socket.emit("send", json );
+    }
+  };
+  
   internal func disconnect(){
     if self.socket != nil {
       

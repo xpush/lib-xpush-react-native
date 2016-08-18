@@ -65,7 +65,7 @@ class XPushCore: RCTEventEmitter {
   
   @objc func connect(config: NSDictionary, callback: RCTResponseSenderBlock) -> Void {
     initHanlder();
-      
+    
     // Connect to socket with config
     self.channelCore = ChannelCore( mAppId: config.valueForKey("appId") as! String, mUserId: config.valueForKey("userId") as! String, mDeviceId: config.valueForKey("deviceId") as! String, mChannelId: config.valueForKey("channel") as! String, mServerUrl: config.valueForKey("url") as! String, mServerName: config.valueForKey("name") as! String  );
       
@@ -80,6 +80,19 @@ class XPushCore: RCTEventEmitter {
   
   @objc func send(message: String){
     self.channelCore.send(message);
+  }
+  
+  @objc func sendWithData(data:NSDictionary){
+    var parsed :[String:AnyObject] = [String:AnyObject]();
+    for ( key, value) in data {
+      if let dateVal = value as? NSDate {
+        NSLog( "date format parsing ")
+        parsed[key as! String] = (dateVal.timeIntervalSince1970 * 1000);
+      } else {
+        parsed[key as! String] = value;
+      }
+    }
+    self.channelCore.sendWithData(parsed);
   }
   
   @objc func getChannelInfo(callback: RCTResponseSenderBlock){
@@ -121,4 +134,5 @@ class XPushCore: RCTEventEmitter {
   @objc func disconnect(){
     self.channelCore.disconnect();
   }
+
 }
