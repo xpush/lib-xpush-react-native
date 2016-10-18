@@ -1,8 +1,8 @@
 //
-//  NSCharacterSet.swift
+//  SocketTypes.swift
 //  Socket.IO-Client-Swift
 //
-//  Created by Yannick Loriot on 5/4/16.
+//  Created by Erik Little on 4/8/15.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -24,8 +24,29 @@
 
 import Foundation
 
-extension NSCharacterSet {
-  class var allowedURLCharacterSet: NSCharacterSet {
-    return NSCharacterSet(charactersInString: "!*'();:@&=+$,/?%#[]\" {}").invertedSet
-  }
+public protocol SocketData {}
+
+extension Array : SocketData {}
+extension Bool : SocketData {}
+extension Dictionary : SocketData {}
+extension Double : SocketData {}
+extension Int : SocketData {}
+extension NSArray : SocketData {}
+extension Data : SocketData {}
+extension NSData : SocketData {}
+extension NSDictionary : SocketData {}
+extension NSString : SocketData {}
+extension NSNull : SocketData {}
+extension String : SocketData {}
+
+public typealias AckCallback = ([Any]) -> Void
+public typealias NormalCallback = ([Any], SocketAckEmitter) -> Void
+public typealias OnAckCallback = (_ timeoutAfter: UInt64, _ callback: @escaping AckCallback) -> Void
+
+typealias Probe = (msg: String, type: SocketEnginePacketType, data: [Data])
+typealias ProbeWaitQueue = [Probe]
+
+enum Either<E, V> {
+    case left(E)
+    case right(V)
 }
