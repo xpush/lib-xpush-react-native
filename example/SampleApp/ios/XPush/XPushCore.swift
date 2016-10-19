@@ -63,7 +63,7 @@ class XPushCore: RCTEventEmitter {
     return ["xpush:message", "xpush:connect_error"]
   }
   
-  @objc func connect(config: NSDictionary, callback: @escaping RCTResponseSenderBlock) -> Void {
+  @objc func connect(_ config: NSDictionary, callback: @escaping RCTResponseSenderBlock) -> Void {
     initHanlder();
     
     // Connect to socket with config
@@ -78,11 +78,11 @@ class XPushCore: RCTEventEmitter {
     self.channelCore.connect(handlers: handlers);
   }
   
-  @objc func send(message: String){
+  @objc func send(_ message: String){
     self.channelCore.send(message: message);
   }
   
-  @objc func sendWithData(data:NSDictionary){
+  @objc func sendWithData(_ data:NSDictionary){
     var parsed :[String:AnyObject] = [String:AnyObject]();
     for ( key, value) in data {
       if let dateVal = value as? NSDate {
@@ -95,7 +95,7 @@ class XPushCore: RCTEventEmitter {
     self.channelCore.sendWithData(param: parsed);
   }
   
-  @objc func getChannelInfo(callback: @escaping RCTResponseSenderBlock){
+  @objc func getChannelInfo(_ callback: @escaping RCTResponseSenderBlock){
     
     func cb(data:[String:AnyObject]) -> Void {
       callback([data]);
@@ -104,7 +104,7 @@ class XPushCore: RCTEventEmitter {
     self.channelCore.channelGet(callback: cb);
   }
 
-  @objc func joinChannel(users:NSArray, callback: @escaping RCTResponseSenderBlock){
+  @objc func joinChannel(_ users:NSArray, callback: @escaping RCTResponseSenderBlock){
     
     func cb(res:[String:AnyObject]) -> Void {
       callback([res]);
@@ -113,7 +113,7 @@ class XPushCore: RCTEventEmitter {
     self.channelCore.channelJoin(users: users,callback: cb);
   }
 
-  @objc func banFromChannel(users:NSArray, callback: @escaping RCTResponseSenderBlock){
+  @objc func banFromChannel(_ users:NSArray, callback: @escaping RCTResponseSenderBlock){
     
     func cb(res:[String:AnyObject]) -> Void {
       callback([res]);
@@ -122,7 +122,7 @@ class XPushCore: RCTEventEmitter {
     self.channelCore.banFromChannel(users: users,callback: cb);
   }
   
-  @objc func leaveChannel(callback: @escaping RCTResponseSenderBlock){
+  @objc func leaveChannel(_ callback: @escaping RCTResponseSenderBlock){
     
     func cb(res:[String:AnyObject]) -> Void {
       callback([res]);
