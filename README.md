@@ -30,12 +30,9 @@ Tested in React-Native 0.35 ~ 0.37
 > If you can't find **Objective-C Bridging Header** option in *Build Settings*, follow just below
  - Create a new file `YourAppName.swift` or `YourModuleName.swift` in YourAppName folder
  - Then you will see a popup like this, click *Create Brdiging Header*
-
-![Bridging Header](http://static.stalk.io/images/bh.png)
-
  - Finally search and modify **Objective-C Bridging Header** option to **../node_modules/react-native-xpush-client/ios/XPush/XPushBridge.h**
 
-[!brid]
+![Bridging Header](http://static.stalk.io/images/bh.png)
 
 ### Android
 
@@ -75,10 +72,21 @@ compile project(':react-native-xpush-client')
 
 ### Usage
 
-```
+```javascript
 var XPush = require( 'react-native-xpush-client' );
 
 // setting for server
 XPush.init( 'http://54.178.160.166:8000', 'messengerx', userId, deviceId );
-XPush.send( 'messageText' );
+
+// connect to the `channel01`
+XPush.connect( 'channel01', function(err, data){
+
+  XPush.onMessage( function( data ){
+  	// handle message
+  	console.log( data );
+  });
+
+  // send message
+  XPush.send( 'messageText' );
+});
 ```
