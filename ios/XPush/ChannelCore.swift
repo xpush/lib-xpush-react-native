@@ -62,7 +62,7 @@ class ChannelCore: NSObject {
     self.socket.connect();
   };
   
-  internal func send(message:String){
+  internal func sendText(message:String){
     if self.socket != nil {
       var json:[String:AnyObject] = [String:AnyObject]();
       var data:[String:AnyObject] = [String:AnyObject]();
@@ -79,7 +79,7 @@ class ChannelCore: NSObject {
     }
   };
   
-  internal func sendWithData(param:[String:AnyObject]){
+  internal func sendData(param:[String:AnyObject]){
     if self.socket != nil {
       var json:[String:AnyObject] = [String:AnyObject]();
       var user:[String:AnyObject] = [String:AnyObject]();

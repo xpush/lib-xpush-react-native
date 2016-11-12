@@ -78,21 +78,21 @@ class XPushCore: RCTEventEmitter {
     self.channelCore.connect(handlers: handlers);
   }
   
-  @objc func send(_ message: String){
-    self.channelCore.send(message: message);
+  @objc func sendText(_ message: String){
+    self.channelCore.sendText(message: message);
   }
   
-  @objc func sendWithData(_ data:NSDictionary){
+  @objc func sendData(_ data:NSDictionary){
     var parsed :[String:AnyObject] = [String:AnyObject]();
     for ( key, value) in data {
       if let dateVal = value as? NSDate {
         NSLog( "date format parsing ")
-        parsed[key as! String] = UInt64(dateVal.timeIntervalSince1970 * 1000 ) as AnyObject?;
+        parsed[key as! String] = NSNumber( value: ( UInt64(dateVal.timeIntervalSince1970 * 1000 ) ) ) as AnyObject?;
       } else {
         parsed[key as! String] = value as AnyObject?;
       }
     }
-    self.channelCore.sendWithData(param: parsed);
+    self.channelCore.sendData(param: parsed);
   }
   
   @objc func getChannelInfo(_ callback: @escaping RCTResponseSenderBlock){

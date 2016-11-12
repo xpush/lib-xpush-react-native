@@ -106,4 +106,3 @@ public struct SocketIOClientConfiguration : ExpressibleByArrayLiteral, Collectio
         return backingArray.suffix(from: start)
     }
 }
-

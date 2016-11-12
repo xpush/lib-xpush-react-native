@@ -14,15 +14,28 @@ http://xpush.github.io/about/
 
 ### iOS
 
+Tested in React-Native 0.35 ~ 0.37
+
 1. Open up your project in xcode and right click the package.
  - Click **Add files to 'Your project name'**
  - Navigate to **/node_modules/react-native-xpush-client/ios/XPush**
  - Click 'Add'
  - Click your project in the navigator on the left and go to **build settings**
+ - Check 
 
-2. Search for **Objective-C Bridging Header**
+2. Search for **Objective-C Bridging Header** in `Build Settings`
  - Double click on the empty column
  - Enter **../node_modules/react-native-xpush-client/ios/XPush/XPushBridge.h**
+
+> If you can't find **Objective-C Bridging Header** option in *Build Settings*, follow just below
+ - Create a new file `YourAppName.swift` or `YourModuleName.swift` in YourAppName folder
+ - Then you will see a popup like this, click *Create Brdiging Header*
+
+![Bridging Header](http://static.stalk.io/images/bh.png)
+
+ - Finally search and modify **Objective-C Bridging Header** option to **../node_modules/react-native-xpush-client/ios/XPush/XPushBridge.h**
+
+[!brid]
 
 ### Android
 
