@@ -1,6 +1,6 @@
 # lib-xpush-react-native
 
-xpush client for React Native
+[xpush-chat](https://github.com/xpush/xpush-chat) client for React Native
 
 ##About XPUSH
 
@@ -18,21 +18,22 @@ Tested in React-Native 0.35 ~ 0.37
 
 1. Open up your project in xcode and right click the package.
  - Click **Add files to 'Your project name'**
- - Navigate to **/node_modules/react-native-xpush-client/ios/XPush**
+ - Navigate to **/node_modules/react-native-xpush-client/ios/XPush/**
+ - Drag all files in `XPush` folder
  - Click 'Add'
- - Click your project in the navigator on the left and go to **build settings**
- - Check 
+ - Then you will see a popup like this, click *Create Brdiging Header*
+ ![Bridging Header](http://static.stalk.io/images/bh.png)
 
-2. Search for **Objective-C Bridging Header** in `Build Settings`
- - Double click on the empty column
+2. Click your project in the navigator on the left and go to **build settings**
+ - 
+ - Search for **swift** in `Build Settings`
+ - Double click on **Objective-C Bridging Header** column
  - Enter **../node_modules/react-native-xpush-client/ios/XPush/XPushBridge.h**
 
 > If you can't find **Objective-C Bridging Header** option in *Build Settings*, follow just below
  - Create a new file `YourAppName.swift` or `YourModuleName.swift` in YourAppName folder
- - Then you will see a popup like this, click *Create Brdiging Header*
+ - Then you will see a popup like [this](http://static.stalk.io/images/bh.png), click *Create Brdiging Header*
  - Finally search and modify **Objective-C Bridging Header** option to **../node_modules/react-native-xpush-client/ios/XPush/XPushBridge.h**
-
-![Bridging Header](http://static.stalk.io/images/bh.png)
 
 ### Android
 
@@ -75,8 +76,8 @@ compile project(':react-native-xpush-client')
 ```javascript
 var XPush = require( 'react-native-xpush-client' );
 
-// setting for server
-XPush.init( 'http://54.178.160.166:8000', 'messengerx', userId, deviceId );
+// setting for xpush server
+XPush.init( 'http://54.178.160.166:8000', 'yourAppId', userId, deviceId );
 
 // connect to the `channel01`
 XPush.connect( 'channel01', function(err, data){
@@ -86,7 +87,7 @@ XPush.connect( 'channel01', function(err, data){
   	console.log( data );
   });
 
-  // send message
-  XPush.send( 'messageText' );
+  // send message after channel connect
+  XPush.send( 'hello' );
 });
 ```

@@ -72,11 +72,11 @@ public class ChannelCore {
         mChannelSocket.connect();
     }
 
-    public void sendMessage(String message) {
+    public void sendText(String message) {
         sendMessage(message, null, null, null);
     }
 
-    public void sendMessage(String message, String type) {
+    public void sendText(String message, String type) {
         sendMessage(message, type, null, null);
     }
 
@@ -94,11 +94,11 @@ public class ChannelCore {
         sendMessage(message, "IM", metaData, null );
     }
 
-    public void sendMessage(String message, String type, ArrayList<String> users) {
+    public void sendText(String message, String type, ArrayList<String> users) {
         sendMessage(message, type, null, users);
     }
 
-    public void sendMessage(String message, String type, JSONObject metaData, ArrayList<String> users) {
+    public void sendText(String message, String type, JSONObject metaData, ArrayList<String> users) {
 
         JSONObject json = new JSONObject();
         JSONObject data = new JSONObject();
@@ -136,7 +136,7 @@ public class ChannelCore {
         }
     }
 
-    public void sendWithData(JSONObject data) {
+    public void sendData(JSONObject data) {
 
         JSONObject json = new JSONObject();
         JSONObject user = new JSONObject();

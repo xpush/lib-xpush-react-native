@@ -148,12 +148,19 @@ public class XPushModule extends ReactContextBaseJavaModule {
     @ReactMethod
     public void send(String message){
         if( mChannelCore != null ){
-            mChannelCore.sendMessage(message);
+            mChannelCore.sendText(message);
         }
     }
 
     @ReactMethod
-    public void sendWithData(ReadableMap map){
+    public void sendText(String message){
+        if( mChannelCore != null ){
+            mChannelCore.sendText(message);
+        }
+    }
+
+    @ReactMethod
+    public void sendData(ReadableMap map){
         if( mChannelCore != null ){
             JSONObject data = new JSONObject();
 
@@ -182,7 +189,7 @@ public class XPushModule extends ReactContextBaseJavaModule {
                     e.printStackTrace();
                 }
             }
-            mChannelCore.sendWithData(data);
+            mChannelCore.sendData(data);
         }
     }
 
