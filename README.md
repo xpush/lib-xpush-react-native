@@ -17,6 +17,8 @@ http://xpush.github.io/about/
 Tested in React-Native 0.35 ~ 0.37
 
 1. Open up your project in xcode and right click the package.
+ - Click **New Group** and rename it `XPush`
+ - Right click in `XPush` folder
  - Click **Add files to 'Your project name'**
  - Navigate to **/node_modules/react-native-xpush-client/ios/XPush/**
  - Drag all files in `XPush` folder
@@ -25,7 +27,6 @@ Tested in React-Native 0.35 ~ 0.37
  ![Bridging Header](http://static.stalk.io/images/bh.png)
 
 2. Click your project in the navigator on the left and go to **build settings**
- - 
  - Search for **swift** in `Build Settings`
  - Double click on **Objective-C Bridging Header** column
  - Enter **../node_modules/react-native-xpush-client/ios/XPush/XPushBridge.h**
