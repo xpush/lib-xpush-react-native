@@ -2,13 +2,7 @@ package com.sampleapp;
 
 import com.facebook.react.ReactActivity;
 import com.imagepicker.ImagePickerPackage;
-import com.facebook.react.ReactPackage;
-import com.facebook.react.shell.MainReactPackage;
-
-import java.util.Arrays;
-import java.util.List;
-
-import io.xpush.core.XPushPackage;
+import io.xpush.core.XPushPackage ;
 
 public class MainActivity extends ReactActivity {
 
@@ -20,14 +14,4 @@ public class MainActivity extends ReactActivity {
     protected String getMainComponentName() {
         return "SampleApp";
     }
-
-    /**
-     * Returns whether dev mode should be enabled.
-     * This enables e.g. the dev menu.
-     */
-    @Override
-    protected boolean getUseDeveloperSupport() {
-        return BuildConfig.DEBUG;
-    }
-
 }

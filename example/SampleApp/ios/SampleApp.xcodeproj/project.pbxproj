@@ -20,37 +20,39 @@
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
-		1A2109FA1DB632920031A530 /* ChannelCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2109DD1DB632920031A530 /* ChannelCore.swift */; };
-		1A2109FB1DB632920031A530 /* SocketAckEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2109DF1DB632920031A530 /* SocketAckEmitter.swift */; };
-		1A2109FC1DB632920031A530 /* SocketAckManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2109E01DB632920031A530 /* SocketAckManager.swift */; };
-		1A2109FD1DB632920031A530 /* SocketAnyEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2109E11DB632920031A530 /* SocketAnyEvent.swift */; };
-		1A2109FE1DB632920031A530 /* SocketClientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2109E21DB632920031A530 /* SocketClientManager.swift */; };
-		1A2109FF1DB632920031A530 /* SocketEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2109E31DB632920031A530 /* SocketEngine.swift */; };
-		1A210A001DB632920031A530 /* SocketEngineClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2109E41DB632920031A530 /* SocketEngineClient.swift */; };
-		1A210A011DB632920031A530 /* SocketEnginePacketType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2109E51DB632920031A530 /* SocketEnginePacketType.swift */; };
-		1A210A021DB632920031A530 /* SocketEnginePollable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2109E61DB632920031A530 /* SocketEnginePollable.swift */; };
-		1A210A031DB632920031A530 /* SocketEngineSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2109E71DB632920031A530 /* SocketEngineSpec.swift */; };
-		1A210A041DB632920031A530 /* SocketEngineWebsocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2109E81DB632920031A530 /* SocketEngineWebsocket.swift */; };
-		1A210A051DB632920031A530 /* SocketEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2109E91DB632920031A530 /* SocketEventHandler.swift */; };
-		1A210A061DB632920031A530 /* SocketExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2109EA1DB632920031A530 /* SocketExtensions.swift */; };
-		1A210A071DB632920031A530 /* SocketIOClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2109EB1DB632920031A530 /* SocketIOClient.swift */; };
-		1A210A081DB632920031A530 /* SocketIOClientConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2109EC1DB632920031A530 /* SocketIOClientConfiguration.swift */; };
-		1A210A091DB632920031A530 /* SocketIOClientOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2109ED1DB632920031A530 /* SocketIOClientOption.swift */; };
-		1A210A0A1DB632920031A530 /* SocketIOClientSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2109EE1DB632920031A530 /* SocketIOClientSpec.swift */; };
-		1A210A0B1DB632920031A530 /* SocketIOClientStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2109EF1DB632920031A530 /* SocketIOClientStatus.swift */; };
-		1A210A0C1DB632920031A530 /* SocketLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2109F01DB632920031A530 /* SocketLogger.swift */; };
-		1A210A0D1DB632920031A530 /* SocketPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2109F11DB632920031A530 /* SocketPacket.swift */; };
-		1A210A0E1DB632920031A530 /* SocketParsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2109F21DB632920031A530 /* SocketParsable.swift */; };
-		1A210A0F1DB632920031A530 /* SocketStringReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2109F31DB632920031A530 /* SocketStringReader.swift */; };
-		1A210A101DB632920031A530 /* SocketTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2109F41DB632920031A530 /* SocketTypes.swift */; };
-		1A210A111DB632920031A530 /* SSLSecurity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2109F51DB632920031A530 /* SSLSecurity.swift */; };
-		1A210A121DB632920031A530 /* WebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2109F61DB632920031A530 /* WebSocket.swift */; };
-		1A210A131DB632920031A530 /* XPushBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2109F81DB632920031A530 /* XPushBridge.m */; };
-		1A210A141DB632920031A530 /* XPushCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2109F91DB632920031A530 /* XPushCore.swift */; };
-		1A86146F1D51F9ED00C9F63E /* libRCTPushNotification.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A8614681D51F9A900C9F63E /* libRCTPushNotification.a */; };
+		1AD3DBAF1E28C27900239EAD /* ChannelCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD3DB921E28C27900239EAD /* ChannelCore.swift */; };
+		1AD3DBB01E28C27900239EAD /* SocketAckEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD3DB941E28C27900239EAD /* SocketAckEmitter.swift */; };
+		1AD3DBB11E28C27900239EAD /* SocketAckManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD3DB951E28C27900239EAD /* SocketAckManager.swift */; };
+		1AD3DBB21E28C27900239EAD /* SocketAnyEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD3DB961E28C27900239EAD /* SocketAnyEvent.swift */; };
+		1AD3DBB31E28C27900239EAD /* SocketClientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD3DB971E28C27900239EAD /* SocketClientManager.swift */; };
+		1AD3DBB41E28C27900239EAD /* SocketEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD3DB981E28C27900239EAD /* SocketEngine.swift */; };
+		1AD3DBB51E28C27900239EAD /* SocketEngineClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD3DB991E28C27900239EAD /* SocketEngineClient.swift */; };
+		1AD3DBB61E28C27900239EAD /* SocketEnginePacketType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD3DB9A1E28C27900239EAD /* SocketEnginePacketType.swift */; };
+		1AD3DBB71E28C27900239EAD /* SocketEnginePollable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD3DB9B1E28C27900239EAD /* SocketEnginePollable.swift */; };
+		1AD3DBB81E28C27900239EAD /* SocketEngineSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD3DB9C1E28C27900239EAD /* SocketEngineSpec.swift */; };
+		1AD3DBB91E28C27900239EAD /* SocketEngineWebsocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD3DB9D1E28C27900239EAD /* SocketEngineWebsocket.swift */; };
+		1AD3DBBA1E28C27900239EAD /* SocketEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD3DB9E1E28C27900239EAD /* SocketEventHandler.swift */; };
+		1AD3DBBB1E28C27900239EAD /* SocketExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD3DB9F1E28C27900239EAD /* SocketExtensions.swift */; };
+		1AD3DBBC1E28C27900239EAD /* SocketIOClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD3DBA01E28C27900239EAD /* SocketIOClient.swift */; };
+		1AD3DBBD1E28C27900239EAD /* SocketIOClientConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD3DBA11E28C27900239EAD /* SocketIOClientConfiguration.swift */; };
+		1AD3DBBE1E28C27900239EAD /* SocketIOClientOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD3DBA21E28C27900239EAD /* SocketIOClientOption.swift */; };
+		1AD3DBBF1E28C27900239EAD /* SocketIOClientSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD3DBA31E28C27900239EAD /* SocketIOClientSpec.swift */; };
+		1AD3DBC01E28C27900239EAD /* SocketIOClientStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD3DBA41E28C27900239EAD /* SocketIOClientStatus.swift */; };
+		1AD3DBC11E28C27900239EAD /* SocketLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD3DBA51E28C27900239EAD /* SocketLogger.swift */; };
+		1AD3DBC21E28C27900239EAD /* SocketPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD3DBA61E28C27900239EAD /* SocketPacket.swift */; };
+		1AD3DBC31E28C27900239EAD /* SocketParsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD3DBA71E28C27900239EAD /* SocketParsable.swift */; };
+		1AD3DBC41E28C27900239EAD /* SocketStringReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD3DBA81E28C27900239EAD /* SocketStringReader.swift */; };
+		1AD3DBC51E28C27900239EAD /* SocketTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD3DBA91E28C27900239EAD /* SocketTypes.swift */; };
+		1AD3DBC61E28C27900239EAD /* SSLSecurity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD3DBAA1E28C27900239EAD /* SSLSecurity.swift */; };
+		1AD3DBC71E28C27900239EAD /* WebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD3DBAB1E28C27900239EAD /* WebSocket.swift */; };
+		1AD3DBC81E28C27900239EAD /* XPushBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD3DBAD1E28C27900239EAD /* XPushBridge.m */; };
+		1AD3DBC91E28C27900239EAD /* XPushCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD3DBAE1E28C27900239EAD /* XPushCore.swift */; };
+		1AD3DBD31E28C4A600239EAD /* libRCTPushNotification.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD3DBD01E28C46F00239EAD /* libRCTPushNotification.a */; };
+		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
-		DE697BE59C984B3AA01C4100 /* libRNImagePicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD248DD484EE493792D801D6 /* libRNImagePicker.a */; };
+		B9BCB7EF2BBD41D1BCEE8E11 /* libRNImagePicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B0E9DF3FF954B43824599A8 /* libRNImagePicker.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,19 +119,131 @@
 			remoteGlobalIDString = 83CBBA2E1A601D0E00E9B192;
 			remoteInfo = React;
 		};
-		1A8614671D51F9A900C9F63E /* PBXContainerItemProxy */ = {
+		1AD3DB8C1E28C22100239EAD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 1A86145E1D51F9A900C9F63E /* RCTPushNotification.xcodeproj */;
+			containerPortal = 147734E9A0F64109803D78D6 /* RNImagePicker.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 014A3B5C1C6CF33500B6D375;
+			remoteInfo = RNImagePicker;
+		};
+		1AD3DBCF1E28C46F00239EAD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1AD3DBCA1E28C46E00239EAD /* RCTPushNotification.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 134814201AA4EA6300B7C361;
 			remoteInfo = RCTPushNotification;
 		};
-		1AD94D861D46160400957366 /* PBXContainerItemProxy */ = {
+		1AD3DBD11E28C46F00239EAD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 1AC43786470743DBBB61B5BC /* RNImagePicker.xcodeproj */;
+			containerPortal = 1AD3DBCA1E28C46E00239EAD /* RCTPushNotification.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 014A3B5C1C6CF33500B6D375;
-			remoteInfo = RNImagePicker;
+			remoteGlobalIDString = 3D05745F1DE6004600184BB4;
+			remoteInfo = "RCTPushNotification-tvOS";
+		};
+		3DAD3E831DF850E9000B6D8A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 00C302BB1ABCB91800DB3ED1 /* RCTImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2D2A283A1D9B042B00D4039D;
+			remoteInfo = "RCTImage-tvOS";
+		};
+		3DAD3E871DF850E9000B6D8A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2D2A28471D9B043800D4039D;
+			remoteInfo = "RCTLinking-tvOS";
+		};
+		3DAD3E8B1DF850E9000B6D8A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 00C302D31ABCB9D200DB3ED1 /* RCTNetwork.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2D2A28541D9B044C00D4039D;
+			remoteInfo = "RCTNetwork-tvOS";
+		};
+		3DAD3E8F1DF850E9000B6D8A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2D2A28611D9B046600D4039D;
+			remoteInfo = "RCTSettings-tvOS";
+		};
+		3DAD3E931DF850E9000B6D8A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2D2A287B1D9B048500D4039D;
+			remoteInfo = "RCTText-tvOS";
+		};
+		3DAD3E981DF850E9000B6D8A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2D2A28881D9B049200D4039D;
+			remoteInfo = "RCTWebSocket-tvOS";
+		};
+		3DAD3EA21DF850E9000B6D8A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2D2A28131D9B038B00D4039D;
+			remoteInfo = "React-tvOS";
+		};
+		3DAD3EA41DF850E9000B6D8A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3D3C059A1DE3340900C268FA;
+			remoteInfo = yoga;
+		};
+		3DAD3EA61DF850E9000B6D8A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3D3C06751DE3340C00C268FA;
+			remoteInfo = "yoga-tvOS";
+		};
+		3DAD3EA81DF850E9000B6D8A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3D3CD9251DE5FBEC00167DC4;
+			remoteInfo = cxxreact;
+		};
+		3DAD3EAA1DF850E9000B6D8A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3D3CD9321DE5FBEE00167DC4;
+			remoteInfo = "cxxreact-tvOS";
+		};
+		3DAD3EAC1DF850E9000B6D8A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3D3CD90B1DE5FBD600167DC4;
+			remoteInfo = jschelpers;
+		};
+		3DAD3EAE1DF850E9000B6D8A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3D3CD9181DE5FBD800167DC4;
+			remoteInfo = "jschelpers-tvOS";
+		};
+		5E9157321DD0AC6500FF2AA8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = RCTAnimation;
+		};
+		5E9157341DD0AC6500FF2AA8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2D2A28201D9B03D100D4039D;
+			remoteInfo = "RCTAnimation-tvOS";
 		};
 		78C398B81ACF4ADC00677621 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -167,39 +281,40 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = SampleApp/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = SampleApp/main.m; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
-		1A2109DD1DB632920031A530 /* ChannelCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelCore.swift; sourceTree = "<group>"; };
-		1A2109DF1DB632920031A530 /* SocketAckEmitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketAckEmitter.swift; sourceTree = "<group>"; };
-		1A2109E01DB632920031A530 /* SocketAckManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketAckManager.swift; sourceTree = "<group>"; };
-		1A2109E11DB632920031A530 /* SocketAnyEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketAnyEvent.swift; sourceTree = "<group>"; };
-		1A2109E21DB632920031A530 /* SocketClientManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketClientManager.swift; sourceTree = "<group>"; };
-		1A2109E31DB632920031A530 /* SocketEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketEngine.swift; sourceTree = "<group>"; };
-		1A2109E41DB632920031A530 /* SocketEngineClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketEngineClient.swift; sourceTree = "<group>"; };
-		1A2109E51DB632920031A530 /* SocketEnginePacketType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketEnginePacketType.swift; sourceTree = "<group>"; };
-		1A2109E61DB632920031A530 /* SocketEnginePollable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketEnginePollable.swift; sourceTree = "<group>"; };
-		1A2109E71DB632920031A530 /* SocketEngineSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketEngineSpec.swift; sourceTree = "<group>"; };
-		1A2109E81DB632920031A530 /* SocketEngineWebsocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketEngineWebsocket.swift; sourceTree = "<group>"; };
-		1A2109E91DB632920031A530 /* SocketEventHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketEventHandler.swift; sourceTree = "<group>"; };
-		1A2109EA1DB632920031A530 /* SocketExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketExtensions.swift; sourceTree = "<group>"; };
-		1A2109EB1DB632920031A530 /* SocketIOClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketIOClient.swift; sourceTree = "<group>"; };
-		1A2109EC1DB632920031A530 /* SocketIOClientConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketIOClientConfiguration.swift; sourceTree = "<group>"; };
-		1A2109ED1DB632920031A530 /* SocketIOClientOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketIOClientOption.swift; sourceTree = "<group>"; };
-		1A2109EE1DB632920031A530 /* SocketIOClientSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketIOClientSpec.swift; sourceTree = "<group>"; };
-		1A2109EF1DB632920031A530 /* SocketIOClientStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketIOClientStatus.swift; sourceTree = "<group>"; };
-		1A2109F01DB632920031A530 /* SocketLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketLogger.swift; sourceTree = "<group>"; };
-		1A2109F11DB632920031A530 /* SocketPacket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketPacket.swift; sourceTree = "<group>"; };
-		1A2109F21DB632920031A530 /* SocketParsable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketParsable.swift; sourceTree = "<group>"; };
-		1A2109F31DB632920031A530 /* SocketStringReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketStringReader.swift; sourceTree = "<group>"; };
-		1A2109F41DB632920031A530 /* SocketTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketTypes.swift; sourceTree = "<group>"; };
-		1A2109F51DB632920031A530 /* SSLSecurity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSLSecurity.swift; sourceTree = "<group>"; };
-		1A2109F61DB632920031A530 /* WebSocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebSocket.swift; sourceTree = "<group>"; };
-		1A2109F71DB632920031A530 /* XPushBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPushBridge.h; sourceTree = "<group>"; };
-		1A2109F81DB632920031A530 /* XPushBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPushBridge.m; sourceTree = "<group>"; };
-		1A2109F91DB632920031A530 /* XPushCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XPushCore.swift; sourceTree = "<group>"; };
-		1A86145E1D51F9A900C9F63E /* RCTPushNotification.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTPushNotification.xcodeproj; path = "../node_modules/react-native/Libraries/PushNotificationIOS/RCTPushNotification.xcodeproj"; sourceTree = "<group>"; };
-		1AC43786470743DBBB61B5BC /* RNImagePicker.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNImagePicker.xcodeproj; path = "../node_modules/react-native-image-picker/ios/RNImagePicker.xcodeproj"; sourceTree = "<group>"; };
+		147734E9A0F64109803D78D6 /* RNImagePicker.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNImagePicker.xcodeproj; path = "../node_modules/react-native-image-picker/ios/RNImagePicker.xcodeproj"; sourceTree = "<group>"; };
+		1AD3DB921E28C27900239EAD /* ChannelCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelCore.swift; sourceTree = "<group>"; };
+		1AD3DB941E28C27900239EAD /* SocketAckEmitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketAckEmitter.swift; sourceTree = "<group>"; };
+		1AD3DB951E28C27900239EAD /* SocketAckManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketAckManager.swift; sourceTree = "<group>"; };
+		1AD3DB961E28C27900239EAD /* SocketAnyEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketAnyEvent.swift; sourceTree = "<group>"; };
+		1AD3DB971E28C27900239EAD /* SocketClientManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketClientManager.swift; sourceTree = "<group>"; };
+		1AD3DB981E28C27900239EAD /* SocketEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketEngine.swift; sourceTree = "<group>"; };
+		1AD3DB991E28C27900239EAD /* SocketEngineClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketEngineClient.swift; sourceTree = "<group>"; };
+		1AD3DB9A1E28C27900239EAD /* SocketEnginePacketType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketEnginePacketType.swift; sourceTree = "<group>"; };
+		1AD3DB9B1E28C27900239EAD /* SocketEnginePollable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketEnginePollable.swift; sourceTree = "<group>"; };
+		1AD3DB9C1E28C27900239EAD /* SocketEngineSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketEngineSpec.swift; sourceTree = "<group>"; };
+		1AD3DB9D1E28C27900239EAD /* SocketEngineWebsocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketEngineWebsocket.swift; sourceTree = "<group>"; };
+		1AD3DB9E1E28C27900239EAD /* SocketEventHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketEventHandler.swift; sourceTree = "<group>"; };
+		1AD3DB9F1E28C27900239EAD /* SocketExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketExtensions.swift; sourceTree = "<group>"; };
+		1AD3DBA01E28C27900239EAD /* SocketIOClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketIOClient.swift; sourceTree = "<group>"; };
+		1AD3DBA11E28C27900239EAD /* SocketIOClientConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketIOClientConfiguration.swift; sourceTree = "<group>"; };
+		1AD3DBA21E28C27900239EAD /* SocketIOClientOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketIOClientOption.swift; sourceTree = "<group>"; };
+		1AD3DBA31E28C27900239EAD /* SocketIOClientSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketIOClientSpec.swift; sourceTree = "<group>"; };
+		1AD3DBA41E28C27900239EAD /* SocketIOClientStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketIOClientStatus.swift; sourceTree = "<group>"; };
+		1AD3DBA51E28C27900239EAD /* SocketLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketLogger.swift; sourceTree = "<group>"; };
+		1AD3DBA61E28C27900239EAD /* SocketPacket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketPacket.swift; sourceTree = "<group>"; };
+		1AD3DBA71E28C27900239EAD /* SocketParsable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketParsable.swift; sourceTree = "<group>"; };
+		1AD3DBA81E28C27900239EAD /* SocketStringReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketStringReader.swift; sourceTree = "<group>"; };
+		1AD3DBA91E28C27900239EAD /* SocketTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketTypes.swift; sourceTree = "<group>"; };
+		1AD3DBAA1E28C27900239EAD /* SSLSecurity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSLSecurity.swift; sourceTree = "<group>"; };
+		1AD3DBAB1E28C27900239EAD /* WebSocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebSocket.swift; sourceTree = "<group>"; };
+		1AD3DBAC1E28C27900239EAD /* XPushBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPushBridge.h; sourceTree = "<group>"; };
+		1AD3DBAD1E28C27900239EAD /* XPushBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPushBridge.m; sourceTree = "<group>"; };
+		1AD3DBAE1E28C27900239EAD /* XPushCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XPushCore.swift; sourceTree = "<group>"; };
+		1AD3DBCA1E28C46E00239EAD /* RCTPushNotification.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTPushNotification.xcodeproj; path = "../node_modules/react-native/Libraries/PushNotificationIOS/RCTPushNotification.xcodeproj"; sourceTree = "<group>"; };
+		1B0E9DF3FF954B43824599A8 /* libRNImagePicker.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNImagePicker.a; sourceTree = "<group>"; };
+		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
-		BD248DD484EE493792D801D6 /* libRNImagePicker.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNImagePicker.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +322,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,7 +330,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A86146F1D51F9ED00C9F63E /* libRCTPushNotification.a in Frameworks */,
+				1AD3DBD31E28C4A600239EAD /* libRCTPushNotification.a in Frameworks */,
+				5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
 				00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */,
 				00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */,
@@ -225,7 +342,7 @@
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
-				DE697BE59C984B3AA01C4100 /* libRNImagePicker.a in Frameworks */,
+				B9BCB7EF2BBD41D1BCEE8E11 /* libRNImagePicker.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +369,7 @@
 			isa = PBXGroup;
 			children = (
 				00C302C01ABCB91800DB3ED1 /* libRCTImage.a */,
+				3DAD3E841DF850E9000B6D8A /* libRCTImage-tvOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -260,6 +378,7 @@
 			isa = PBXGroup;
 			children = (
 				00C302DC1ABCB9D200DB3ED1 /* libRCTNetwork.a */,
+				3DAD3E8C1DF850E9000B6D8A /* libRCTNetwork-tvOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -293,6 +412,7 @@
 			isa = PBXGroup;
 			children = (
 				139105C11AF99BAD00B5F7CC /* libRCTSettings.a */,
+				3DAD3E901DF850E9000B6D8A /* libRCTSettings-tvOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -301,6 +421,7 @@
 			isa = PBXGroup;
 			children = (
 				139FDEF41B06529B00C62182 /* libRCTWebSocket.a */,
+				3DAD3E991DF850E9000B6D8A /* libRCTWebSocket-tvOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -308,7 +429,7 @@
 		13B07FAE1A68108700A75B9A /* SampleApp */ = {
 			isa = PBXGroup;
 			children = (
-				1A2109DC1DB632920031A530 /* XPush */,
+				1AD3DB911E28C27900239EAD /* XPush */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -324,65 +445,83 @@
 			isa = PBXGroup;
 			children = (
 				146834041AC3E56700842450 /* libReact.a */,
+				3DAD3EA31DF850E9000B6D8A /* libReact.a */,
+				3DAD3EA51DF850E9000B6D8A /* libyoga.a */,
+				3DAD3EA71DF850E9000B6D8A /* libyoga.a */,
+				3DAD3EA91DF850E9000B6D8A /* libcxxreact.a */,
+				3DAD3EAB1DF850E9000B6D8A /* libcxxreact.a */,
+				3DAD3EAD1DF850E9000B6D8A /* libjschelpers.a */,
+				3DAD3EAF1DF850E9000B6D8A /* libjschelpers.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1A2109DC1DB632920031A530 /* XPush */ = {
+		1AD3DB701E28C22100239EAD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1A2109DD1DB632920031A530 /* ChannelCore.swift */,
-				1A2109DE1DB632920031A530 /* SocketIOClient */,
-				1A2109F71DB632920031A530 /* XPushBridge.h */,
-				1A2109F81DB632920031A530 /* XPushBridge.m */,
-				1A2109F91DB632920031A530 /* XPushCore.swift */,
+				1AD3DB8D1E28C22100239EAD /* libRNImagePicker.a */,
 			);
-			path = XPush;
+			name = Products;
 			sourceTree = "<group>";
 		};
-		1A2109DE1DB632920031A530 /* SocketIOClient */ = {
+		1AD3DB911E28C27900239EAD /* XPush */ = {
 			isa = PBXGroup;
 			children = (
-				1A2109DF1DB632920031A530 /* SocketAckEmitter.swift */,
-				1A2109E01DB632920031A530 /* SocketAckManager.swift */,
-				1A2109E11DB632920031A530 /* SocketAnyEvent.swift */,
-				1A2109E21DB632920031A530 /* SocketClientManager.swift */,
-				1A2109E31DB632920031A530 /* SocketEngine.swift */,
-				1A2109E41DB632920031A530 /* SocketEngineClient.swift */,
-				1A2109E51DB632920031A530 /* SocketEnginePacketType.swift */,
-				1A2109E61DB632920031A530 /* SocketEnginePollable.swift */,
-				1A2109E71DB632920031A530 /* SocketEngineSpec.swift */,
-				1A2109E81DB632920031A530 /* SocketEngineWebsocket.swift */,
-				1A2109E91DB632920031A530 /* SocketEventHandler.swift */,
-				1A2109EA1DB632920031A530 /* SocketExtensions.swift */,
-				1A2109EB1DB632920031A530 /* SocketIOClient.swift */,
-				1A2109EC1DB632920031A530 /* SocketIOClientConfiguration.swift */,
-				1A2109ED1DB632920031A530 /* SocketIOClientOption.swift */,
-				1A2109EE1DB632920031A530 /* SocketIOClientSpec.swift */,
-				1A2109EF1DB632920031A530 /* SocketIOClientStatus.swift */,
-				1A2109F01DB632920031A530 /* SocketLogger.swift */,
-				1A2109F11DB632920031A530 /* SocketPacket.swift */,
-				1A2109F21DB632920031A530 /* SocketParsable.swift */,
-				1A2109F31DB632920031A530 /* SocketStringReader.swift */,
-				1A2109F41DB632920031A530 /* SocketTypes.swift */,
-				1A2109F51DB632920031A530 /* SSLSecurity.swift */,
-				1A2109F61DB632920031A530 /* WebSocket.swift */,
+				1AD3DB921E28C27900239EAD /* ChannelCore.swift */,
+				1AD3DB931E28C27900239EAD /* SocketIOClient */,
+				1AD3DBAC1E28C27900239EAD /* XPushBridge.h */,
+				1AD3DBAD1E28C27900239EAD /* XPushBridge.m */,
+				1AD3DBAE1E28C27900239EAD /* XPushCore.swift */,
+			);
+			name = XPush;
+			path = "../node_modules/react-native-xpush-client/ios/XPush";
+			sourceTree = "<group>";
+		};
+		1AD3DB931E28C27900239EAD /* SocketIOClient */ = {
+			isa = PBXGroup;
+			children = (
+				1AD3DB941E28C27900239EAD /* SocketAckEmitter.swift */,
+				1AD3DB951E28C27900239EAD /* SocketAckManager.swift */,
+				1AD3DB961E28C27900239EAD /* SocketAnyEvent.swift */,
+				1AD3DB971E28C27900239EAD /* SocketClientManager.swift */,
+				1AD3DB981E28C27900239EAD /* SocketEngine.swift */,
+				1AD3DB991E28C27900239EAD /* SocketEngineClient.swift */,
+				1AD3DB9A1E28C27900239EAD /* SocketEnginePacketType.swift */,
+				1AD3DB9B1E28C27900239EAD /* SocketEnginePollable.swift */,
+				1AD3DB9C1E28C27900239EAD /* SocketEngineSpec.swift */,
+				1AD3DB9D1E28C27900239EAD /* SocketEngineWebsocket.swift */,
+				1AD3DB9E1E28C27900239EAD /* SocketEventHandler.swift */,
+				1AD3DB9F1E28C27900239EAD /* SocketExtensions.swift */,
+				1AD3DBA01E28C27900239EAD /* SocketIOClient.swift */,
+				1AD3DBA11E28C27900239EAD /* SocketIOClientConfiguration.swift */,
+				1AD3DBA21E28C27900239EAD /* SocketIOClientOption.swift */,
+				1AD3DBA31E28C27900239EAD /* SocketIOClientSpec.swift */,
+				1AD3DBA41E28C27900239EAD /* SocketIOClientStatus.swift */,
+				1AD3DBA51E28C27900239EAD /* SocketLogger.swift */,
+				1AD3DBA61E28C27900239EAD /* SocketPacket.swift */,
+				1AD3DBA71E28C27900239EAD /* SocketParsable.swift */,
+				1AD3DBA81E28C27900239EAD /* SocketStringReader.swift */,
+				1AD3DBA91E28C27900239EAD /* SocketTypes.swift */,
+				1AD3DBAA1E28C27900239EAD /* SSLSecurity.swift */,
+				1AD3DBAB1E28C27900239EAD /* WebSocket.swift */,
 			);
 			path = SocketIOClient;
 			sourceTree = "<group>";
 		};
-		1A86145F1D51F9A900C9F63E /* Products */ = {
+		1AD3DBCB1E28C46E00239EAD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1A8614681D51F9A900C9F63E /* libRCTPushNotification.a */,
+				1AD3DBD01E28C46F00239EAD /* libRCTPushNotification.a */,
+				1AD3DBD21E28C46F00239EAD /* libRCTPushNotification-tvOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1AD94D791D46160400957366 /* Products */ = {
+		5E91572E1DD0AC6500FF2AA8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1AD94D871D46160400957366 /* libRNImagePicker.a */,
+				5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */,
+				5E9157351DD0AC6500FF2AA8 /* libRCTAnimation-tvOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -391,6 +530,7 @@
 			isa = PBXGroup;
 			children = (
 				78C398B91ACF4ADC00677621 /* libRCTLinking.a */,
+				3DAD3E881DF850E9000B6D8A /* libRCTLinking-tvOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -398,7 +538,8 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				1A86145E1D51F9A900C9F63E /* RCTPushNotification.xcodeproj */,
+				1AD3DBCA1E28C46E00239EAD /* RCTPushNotification.xcodeproj */,
+				5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
 				00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */,
 				00C302B51ABCB90400DB3ED1 /* RCTGeolocation.xcodeproj */,
@@ -409,7 +550,7 @@
 				832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */,
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
-				1AC43786470743DBBB61B5BC /* RNImagePicker.xcodeproj */,
+				147734E9A0F64109803D78D6 /* RNImagePicker.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -418,6 +559,7 @@
 			isa = PBXGroup;
 			children = (
 				832341B51AAA6A8300B99B32 /* libRCTText.a */,
+				3DAD3E941DF850E9000B6D8A /* libRCTText-tvOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -488,9 +630,7 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftMigration = 0730;
-				LastSwiftUpdateCheck = 730;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 610;
 				ORGANIZATIONNAME = Facebook;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
@@ -498,7 +638,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0820;
 					};
 				};
 			};
@@ -519,6 +659,10 @@
 					ProjectRef = 00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */;
 				},
 				{
+					ProductGroup = 5E91572E1DD0AC6500FF2AA8 /* Products */;
+					ProjectRef = 5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */;
+				},
+				{
 					ProductGroup = 00C302B61ABCB90400DB3ED1 /* Products */;
 					ProjectRef = 00C302B51ABCB90400DB3ED1 /* RCTGeolocation.xcodeproj */;
 				},
@@ -535,8 +679,8 @@
 					ProjectRef = 00C302D31ABCB9D200DB3ED1 /* RCTNetwork.xcodeproj */;
 				},
 				{
-					ProductGroup = 1A86145F1D51F9A900C9F63E /* Products */;
-					ProjectRef = 1A86145E1D51F9A900C9F63E /* RCTPushNotification.xcodeproj */;
+					ProductGroup = 1AD3DBCB1E28C46E00239EAD /* Products */;
+					ProjectRef = 1AD3DBCA1E28C46E00239EAD /* RCTPushNotification.xcodeproj */;
 				},
 				{
 					ProductGroup = 139105B71AF99BAD00B5F7CC /* Products */;
@@ -559,8 +703,8 @@
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
 				},
 				{
-					ProductGroup = 1AD94D791D46160400957366 /* Products */;
-					ProjectRef = 1AC43786470743DBBB61B5BC /* RNImagePicker.xcodeproj */;
+					ProductGroup = 1AD3DB701E28C22100239EAD /* Products */;
+					ProjectRef = 147734E9A0F64109803D78D6 /* RNImagePicker.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -628,18 +772,130 @@
 			remoteRef = 146834031AC3E56700842450 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		1A8614681D51F9A900C9F63E /* libRCTPushNotification.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRCTPushNotification.a;
-			remoteRef = 1A8614671D51F9A900C9F63E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		1AD94D871D46160400957366 /* libRNImagePicker.a */ = {
+		1AD3DB8D1E28C22100239EAD /* libRNImagePicker.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libRNImagePicker.a;
-			remoteRef = 1AD94D861D46160400957366 /* PBXContainerItemProxy */;
+			remoteRef = 1AD3DB8C1E28C22100239EAD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1AD3DBD01E28C46F00239EAD /* libRCTPushNotification.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRCTPushNotification.a;
+			remoteRef = 1AD3DBCF1E28C46F00239EAD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1AD3DBD21E28C46F00239EAD /* libRCTPushNotification-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libRCTPushNotification-tvOS.a";
+			remoteRef = 1AD3DBD11E28C46F00239EAD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3DAD3E841DF850E9000B6D8A /* libRCTImage-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libRCTImage-tvOS.a";
+			remoteRef = 3DAD3E831DF850E9000B6D8A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3DAD3E881DF850E9000B6D8A /* libRCTLinking-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libRCTLinking-tvOS.a";
+			remoteRef = 3DAD3E871DF850E9000B6D8A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3DAD3E8C1DF850E9000B6D8A /* libRCTNetwork-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libRCTNetwork-tvOS.a";
+			remoteRef = 3DAD3E8B1DF850E9000B6D8A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3DAD3E901DF850E9000B6D8A /* libRCTSettings-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libRCTSettings-tvOS.a";
+			remoteRef = 3DAD3E8F1DF850E9000B6D8A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3DAD3E941DF850E9000B6D8A /* libRCTText-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libRCTText-tvOS.a";
+			remoteRef = 3DAD3E931DF850E9000B6D8A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3DAD3E991DF850E9000B6D8A /* libRCTWebSocket-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libRCTWebSocket-tvOS.a";
+			remoteRef = 3DAD3E981DF850E9000B6D8A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3DAD3EA31DF850E9000B6D8A /* libReact.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libReact.a;
+			remoteRef = 3DAD3EA21DF850E9000B6D8A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3DAD3EA51DF850E9000B6D8A /* libyoga.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libyoga.a;
+			remoteRef = 3DAD3EA41DF850E9000B6D8A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3DAD3EA71DF850E9000B6D8A /* libyoga.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libyoga.a;
+			remoteRef = 3DAD3EA61DF850E9000B6D8A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3DAD3EA91DF850E9000B6D8A /* libcxxreact.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libcxxreact.a;
+			remoteRef = 3DAD3EA81DF850E9000B6D8A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3DAD3EAB1DF850E9000B6D8A /* libcxxreact.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libcxxreact.a;
+			remoteRef = 3DAD3EAA1DF850E9000B6D8A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3DAD3EAD1DF850E9000B6D8A /* libjschelpers.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libjschelpers.a;
+			remoteRef = 3DAD3EAC1DF850E9000B6D8A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3DAD3EAF1DF850E9000B6D8A /* libjschelpers.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libjschelpers.a;
+			remoteRef = 3DAD3EAE1DF850E9000B6D8A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRCTAnimation.a;
+			remoteRef = 5E9157321DD0AC6500FF2AA8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5E9157351DD0AC6500FF2AA8 /* libRCTAnimation-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libRCTAnimation-tvOS.a";
+			remoteRef = 5E9157341DD0AC6500FF2AA8 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		78C398B91ACF4ADC00677621 /* libRCTLinking.a */ = {
@@ -707,35 +963,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AD3DBB61E28C27900239EAD /* SocketEnginePacketType.swift in Sources */,
+				1AD3DBC81E28C27900239EAD /* XPushBridge.m in Sources */,
+				1AD3DBB11E28C27900239EAD /* SocketAckManager.swift in Sources */,
+				1AD3DBC31E28C27900239EAD /* SocketParsable.swift in Sources */,
+				1AD3DBBD1E28C27900239EAD /* SocketIOClientConfiguration.swift in Sources */,
+				1AD3DBB91E28C27900239EAD /* SocketEngineWebsocket.swift in Sources */,
+				1AD3DBB81E28C27900239EAD /* SocketEngineSpec.swift in Sources */,
+				1AD3DBB01E28C27900239EAD /* SocketAckEmitter.swift in Sources */,
+				1AD3DBB51E28C27900239EAD /* SocketEngineClient.swift in Sources */,
+				1AD3DBB21E28C27900239EAD /* SocketAnyEvent.swift in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
-				1A210A0B1DB632920031A530 /* SocketIOClientStatus.swift in Sources */,
-				1A210A081DB632920031A530 /* SocketIOClientConfiguration.swift in Sources */,
-				1A210A0A1DB632920031A530 /* SocketIOClientSpec.swift in Sources */,
-				1A210A041DB632920031A530 /* SocketEngineWebsocket.swift in Sources */,
-				1A210A131DB632920031A530 /* XPushBridge.m in Sources */,
-				1A2109FC1DB632920031A530 /* SocketAckManager.swift in Sources */,
-				1A210A0F1DB632920031A530 /* SocketStringReader.swift in Sources */,
-				1A2109FE1DB632920031A530 /* SocketClientManager.swift in Sources */,
-				1A210A051DB632920031A530 /* SocketEventHandler.swift in Sources */,
-				1A210A091DB632920031A530 /* SocketIOClientOption.swift in Sources */,
-				1A210A111DB632920031A530 /* SSLSecurity.swift in Sources */,
-				1A210A031DB632920031A530 /* SocketEngineSpec.swift in Sources */,
-				1A210A0E1DB632920031A530 /* SocketParsable.swift in Sources */,
-				1A2109FD1DB632920031A530 /* SocketAnyEvent.swift in Sources */,
-				1A210A0C1DB632920031A530 /* SocketLogger.swift in Sources */,
-				1A210A001DB632920031A530 /* SocketEngineClient.swift in Sources */,
-				1A210A141DB632920031A530 /* XPushCore.swift in Sources */,
-				1A210A121DB632920031A530 /* WebSocket.swift in Sources */,
-				1A2109FF1DB632920031A530 /* SocketEngine.swift in Sources */,
-				1A2109FA1DB632920031A530 /* ChannelCore.swift in Sources */,
-				1A210A101DB632920031A530 /* SocketTypes.swift in Sources */,
+				1AD3DBBF1E28C27900239EAD /* SocketIOClientSpec.swift in Sources */,
+				1AD3DBC91E28C27900239EAD /* XPushCore.swift in Sources */,
+				1AD3DBBC1E28C27900239EAD /* SocketIOClient.swift in Sources */,
+				1AD3DBC71E28C27900239EAD /* WebSocket.swift in Sources */,
+				1AD3DBB71E28C27900239EAD /* SocketEnginePollable.swift in Sources */,
+				1AD3DBC21E28C27900239EAD /* SocketPacket.swift in Sources */,
+				1AD3DBBB1E28C27900239EAD /* SocketExtensions.swift in Sources */,
+				1AD3DBBE1E28C27900239EAD /* SocketIOClientOption.swift in Sources */,
+				1AD3DBAF1E28C27900239EAD /* ChannelCore.swift in Sources */,
+				1AD3DBC01E28C27900239EAD /* SocketIOClientStatus.swift in Sources */,
+				1AD3DBB41E28C27900239EAD /* SocketEngine.swift in Sources */,
+				1AD3DBBA1E28C27900239EAD /* SocketEventHandler.swift in Sources */,
+				1AD3DBC41E28C27900239EAD /* SocketStringReader.swift in Sources */,
+				1AD3DBC61E28C27900239EAD /* SSLSecurity.swift in Sources */,
+				1AD3DBC51E28C27900239EAD /* SocketTypes.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
-				1A210A0D1DB632920031A530 /* SocketPacket.swift in Sources */,
-				1A210A061DB632920031A530 /* SocketExtensions.swift in Sources */,
-				1A210A011DB632920031A530 /* SocketEnginePacketType.swift in Sources */,
-				1A2109FB1DB632920031A530 /* SocketAckEmitter.swift in Sources */,
-				1A210A021DB632920031A530 /* SocketEnginePollable.swift in Sources */,
-				1A210A071DB632920031A530 /* SocketIOClient.swift in Sources */,
+				1AD3DBC11E28C27900239EAD /* SocketLogger.swift in Sources */,
+				1AD3DBB31E28C27900239EAD /* SocketClientManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -772,13 +1028,12 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = SampleAppTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SampleApp.app/SampleApp";
 			};
@@ -791,13 +1046,12 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = SampleAppTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SampleApp.app/SampleApp";
 			};
@@ -807,25 +1061,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"$(SRCROOT)/../node_modules/react-native/React/**",
-					"$(SRCROOT)/../node_modules/react-native-image-picker/ios/**",
-					"$(SRCROOT)/../node_modules/react-native/Libraries/PushNotificationIOS/**",
-				);
 				INFOPLIST_FILE = SampleApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
+					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = SampleApp;
 				SWIFT_OBJC_BRIDGING_HEADER = "../node_modules/react-native-xpush-client/ios/XPush/XPushBridge.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -833,25 +1083,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				COPY_PHASE_STRIP = NO;
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"$(SRCROOT)/../node_modules/react-native/React/**",
-					"$(SRCROOT)/../node_modules/react-native-image-picker/ios/**",
-					"$(SRCROOT)/../node_modules/react-native/Libraries/PushNotificationIOS/**",
-				);
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
 				INFOPLIST_FILE = SampleApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
+					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = SampleApp;
 				SWIFT_OBJC_BRIDGING_HEADER = "../node_modules/react-native-xpush-client/ios/XPush/XPushBridge.h";
 				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
@@ -868,19 +1112,15 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -893,12 +1133,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"$(SRCROOT)/../node_modules/react-native/React/**",
-					"$(SRCROOT)/../node_modules/react-native-image-picker/ios/**",
-				);
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -919,10 +1153,8 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -930,23 +1162,15 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"$(SRCROOT)/../node_modules/react-native/React/**",
-					"$(SRCROOT)/../node_modules/react-native-image-picker/ios/**",
-				);
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

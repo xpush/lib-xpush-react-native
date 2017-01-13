@@ -14,7 +14,7 @@ http://xpush.github.io/about/
 
 ### iOS
 
-Tested in React-Native 0.35 ~ 0.37
+Tested in React-Native 0.40
 
 1. Open up your project in xcode and right click the package.
  - Click **New Group** and rename it `XPush`
