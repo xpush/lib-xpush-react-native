@@ -9,7 +9,7 @@
     "react": "~15.4.2",
     "react-native": "^0.40.0",
     "react-native-xpush-client": "../../",
-    "react-native-gifted-messenger": "0.1.4",
+    "react-native-gifted-chat": "0.1.4",
     "react-native-communications": "^1.0.1",
     "react-native-image-picker": "^0.21.1",
     "react-native-action-button": "^1.1.3"

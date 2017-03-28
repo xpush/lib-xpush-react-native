@@ -15,7 +15,7 @@ import {
   AlertIOS,
 } from 'react-native';
 
-var GiftedMessenger = require('react-native-gifted-messenger');
+import { GiftedChat, Bubble, Send, Composer } from 'react-native-gifted-chat';
 var Communications = require('react-native-communications');
 var XPush = require( 'react-native-xpush-client' );
 
@@ -131,41 +131,38 @@ class Chat extends Component {
 
     XPush.connect( 'channel01', function(err, data){
 
-      XPush.onMessage( function(data){
-        console.log( data );
+      XPush.onMessage( function(message){
+        console.log( message );
 
         // make sure that your message contains :
-        // text, name, image, position: 'left', date, uniqueId
-        if( data.UO.U != userId ){
-          var message = {
-            text: data.MG, 
-            name: data.UO.U, 
-            //image: {uri: data.UO.I}, 
-            position: 'left', 
-            date: new Date(data.TS),
-            uniqueId : data.C+"_"+data.TS
-          };
 
-          self.handleReceive( message );
-        }
-      }); 
-    });  
+        self.handleReceive( message );
+      });
+    });
   }
 
   getInitialMessages() {
     return [
       {
+        _id:0,
         text: 'Are you building a chat app?',
-        name: 'React-Bot',
-        image: {uri: 'https://facebook.github.io/react/img/logo_og.png'},
+        user:{
+          _id :'rb',
+          name: 'React-Bot',
+          avatar: 'https://facebook.github.io/react/img/logo_og.png',
+        },
         position: 'left',
         date: new Date(2016, 3, 14, 13, 0),
         uniqueId: Math.round(Math.random() * 10000), // simulating server-side unique id generation
       },
       {
+        _id:1,
         text: "Yes, and I use Gifted Messenger!",
-        name: 'Awesome Developer',
-        image: null,
+        user:{
+          _id :'rb',
+          name: 'Awesome Developer',
+          avatar: null,
+        },
         position: 'right',
         date: new Date(2016, 3, 14, 13, 1),
         uniqueId: Math.round(Math.random() * 10000), // simulating server-side unique id generation
@@ -202,74 +199,39 @@ class Chat extends Component {
     });
   }
 
-  handleSend(message = {}) {
-    XPush.send( message );
+  handleSend = (messages = []) => {
+    XPush.send( messages[0] );
 
     // Your logic here
     // Send message.text to your server
 
-    message.uniqueId = Math.round(Math.random() * 10000); // simulating server-side unique id generation
-    this.setMessages(this._messages.concat(message));
+    //message.uniqueId = Math.round(Math.random() * 10000); // simulating server-side unique id generation
+    //this.setMessages(this._messages.concat(message));
 
     // mark the sent message as Seen
-    setTimeout(() => {
-      this.setMessageStatus(message.uniqueId, 'Seen'); // here you can replace 'Seen' by any string you want
-    }, 1000);
+    //setTimeout(() => {
+    //  this.setMessageStatus(message.uniqueId, 'Seen'); // here you can replace 'Seen' by any string you want
+    //}, 1000);
 
     // if you couldn't send the message to your server :
     // this.setMessageStatus(message.uniqueId, 'ErrorButton');
   }
 
-  onLoadEarlierMessages() {
+  handleReceive = (message = {})=> {
 
-    // display a loader until you retrieve the messages from your server
-    this.setState({
-      isLoadingEarlierMessages: true,
+    console.log( '----55555----');
+    console.log(message );
+
+    this.setState((previousState) => {
+
+      // set latest message !
+      var latest = message.text;
+      if(message.image){
+        latest = '@image';
+      }
+
+      return { messages: GiftedChat.append(previousState.messages, message) };
     });
-
-    // Your logic here
-    // Eg: Retrieve old messages from your server
-
-    // IMPORTANT
-    // Oldest messages have to be at the begining of the array
-    var earlierMessages = [
-      {
-        text: 'React Native enables you to build world-class application experiences on native platforms using a consistent developer experience based on JavaScript and React. https://github.com/facebook/react-native',
-        name: 'React-Bot',
-        image: {uri: 'https://facebook.github.io/react/img/logo_og.png'},
-        position: 'left',
-        date: new Date(2016, 0, 1, 20, 0),
-        uniqueId: Math.round(Math.random() * 10000), // simulating server-side unique id generation
-      }, {
-        text: 'This is a touchable phone number 0606060606 parsed by taskrabbit/react-native-parsed-text',
-        name: 'Awesome Developer',
-        image: null,
-        position: 'right',
-        date: new Date(2016, 0, 2, 12, 0),
-        uniqueId: Math.round(Math.random() * 10000), // simulating server-side unique id generation
-      },
-    ];
-
-    setTimeout(() => {
-      this.setMessages(earlierMessages.concat(this._messages)); // prepend the earlier messages to your list
-      this.setState({
-        isLoadingEarlierMessages: false, // hide the loader
-        allLoaded: true, // hide the `Load earlier messages` button
-      });
-    }, 1000); // simulating network
-
-  }
-
-  handleReceive(message = {}) {
-    this.setMessages(this._messages.concat(message));
-  }
-
-  onErrorButtonPress(message = {}) {
-    // Your logic here
-    // re-send the failed message
-
-    // remove the status
-    this.setMessageStatus(message.uniqueId, '');
   }
 
   // will be triggered when the Image of a row is touched
@@ -281,48 +243,26 @@ class Chat extends Component {
   render() {
     return (
       <View style={{flex:1}}>
-        <GiftedMessenger
-          ref={(c) => this._GiftedMessenger = c}
-
-          styles={{
-            bubbleRight: {
-              marginLeft: 70,
-              backgroundColor: '#007aff',
-            },
-          }}
-
-          autoFocus={false}
+        <GiftedChat
+          ref="ChatBox"
           messages={this.state.messages}
-          handleSend={this.handleSend.bind(this)}
-          onErrorButtonPress={this.onErrorButtonPress.bind(this)}
-          maxHeight={Dimensions.get('window').height - STATUS_BAR_HEIGHT}
+          onSend={this.handleSend}
 
-          loadEarlierMessagesButton={!this.state.allLoaded}
-          onLoadEarlierMessages={this.onLoadEarlierMessages.bind(this)}
-
-          senderName='Awesome Developer'
-          senderImage={null}
-          onImagePress={this.onImagePress}
-          displayNames={true}
-
-          parseText={true} // enable handlePhonePress, handleUrlPress and handleEmailPress
-          handlePhonePress={this.handlePhonePress}
-          handleUrlPress={this.handleUrlPress}
-          handleEmailPress={this.handleEmailPress}
-
-          isLoadingEarlierMessages={this.state.isLoadingEarlierMessages}
-
-          typingMessage={this.state.typingMessage}
+          user={{
+            _id: '_sender', // sent messages should have same user._id
+            name: 'Awesome Developer',
+            avatar: null
+          }}
         />
-        <ActionButton 
-          buttonColor="rgba(76,76,60,1)" 
+        <ActionButton
+          buttonColor="rgba(76,76,60,1)"
           onPress={ this._sendLocalNotification.bind(this) }
           icon={<Text>Notify</Text>}
           offsetX={100}
           offsetY={100}
         />
-        <ActionButton 
-          buttonColor="rgba(231,76,60,1)" 
+        <ActionButton
+          buttonColor="rgba(231,76,60,1)"
           onPress={ this.handleImagePicker.bind(this) }
           icon={<Text>Image</Text>}
           offsetY={100}
@@ -361,10 +301,6 @@ class Chat extends Component {
         }
       });
     }
-  }
-
-  handleEmailPress(email) {
-    Communications.email(email, null, null, null, null);
   }
 
   handleImagePicker(){
