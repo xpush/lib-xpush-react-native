@@ -13,9 +13,14 @@ import {
   Navigator,
   PushNotificationIOS,
   AlertIOS,
+  StyleSheet
 } from 'react-native';
 
-import { GiftedChat, Bubble, Send, Composer } from 'react-native-gifted-chat';
+import { GiftedChat, Actions, Bubble, Send } from 'react-native-gifted-chat';
+
+import CustomActions from './CustomActions';
+import CustomView from './CustomView';
+
 var Communications = require('react-native-communications');
 var XPush = require( 'react-native-xpush-client' );
 
@@ -218,10 +223,6 @@ class Chat extends Component {
   }
 
   handleReceive = (message = {})=> {
-
-    console.log( '----55555----');
-    console.log(message );
-
     this.setState((previousState) => {
 
       // set latest message !
@@ -240,9 +241,46 @@ class Chat extends Component {
     // Eg: Navigate to the user profile
   }
 
+  renderCustomActions =(props)=> {
+    if (Platform.OS === 'ios') {
+      return (
+        <CustomActions
+          {...props}
+        />
+      );
+    }
+    const options = {
+      'Action 1': (props) => {
+        alert('option 1');
+      },
+      'Action 2': (props) => {
+        alert('option 2');
+      },
+      'Cancel': () => {},
+    };
+    return (
+      <Actions
+        {...props}
+        options={options}
+      />
+    );
+  }
+
+  renderFooter =(props)=> {
+    if (this.state.typingText) {
+      return (
+        <View style={styles.footerContainer}>
+          <Text style={styles.footerText}>
+            {this.state.typingText}
+          </Text>
+        </View>
+      );
+    }
+    return null;
+  }
+
   render() {
     return (
-      <View style={{flex:1}}>
         <GiftedChat
           ref="ChatBox"
           messages={this.state.messages}
@@ -253,21 +291,10 @@ class Chat extends Component {
             name: 'Awesome Developer',
             avatar: null
           }}
+
+          renderActions={this.renderCustomActions}
+          renderFooter={this.renderFooter}
         />
-        <ActionButton
-          buttonColor="rgba(76,76,60,1)"
-          onPress={ this._sendLocalNotification.bind(this) }
-          icon={<Text>Notify</Text>}
-          offsetX={100}
-          offsetY={100}
-        />
-        <ActionButton
-          buttonColor="rgba(231,76,60,1)"
-          onPress={ this.handleImagePicker.bind(this) }
-          icon={<Text>Image</Text>}
-          offsetY={100}
-        />
-      </View>
     );
   }
 
@@ -331,5 +358,17 @@ class Chat extends Component {
 
 }
 
+const styles = StyleSheet.create({
+  footerContainer: {
+    marginTop: 5,
+    marginLeft: 10,
+    marginRight: 10,
+    marginBottom: 10,
+  },
+  footerText: {
+    fontSize: 14,
+    color: '#aaa',
+  },
+});
 
 module.exports = Chat;
