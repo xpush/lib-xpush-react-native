@@ -46,7 +46,7 @@ var options = {
 
 var userId = 'user01';
 var deviceId = 'web';
-XPush.init( 'http://54.178.160.166:8000', 'messengerx', userId, deviceId );
+XPush.init( 'http://192.168.0.6:8080', 'messengerx', userId, deviceId );
 
 class Chat extends Component {
 
@@ -137,10 +137,8 @@ class Chat extends Component {
     XPush.connect( 'channel01', function(err, data){
 
       XPush.onMessage( function(message){
-        console.log( message );
 
         // make sure that your message contains :
-
         self.handleReceive( message );
       });
     });
@@ -205,6 +203,7 @@ class Chat extends Component {
   }
 
   handleSend = (messages = []) => {
+
     XPush.send( messages[0] );
 
     // Your logic here
@@ -223,6 +222,7 @@ class Chat extends Component {
   }
 
   handleReceive = (message = {})=> {
+
     this.setState((previousState) => {
 
       // set latest message !
