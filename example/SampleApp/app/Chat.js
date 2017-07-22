@@ -10,7 +10,6 @@ import {
   Dimensions,
   View,
   Text,
-  Navigator,
   PushNotificationIOS,
   AlertIOS,
   StyleSheet
@@ -28,10 +27,7 @@ var ImagePicker = require('react-native-image-picker');
 import ActionButton from 'react-native-action-button';
 
 
-var STATUS_BAR_HEIGHT = Navigator.NavigationBar.Styles.General.StatusBarHeight;
-if (Platform.OS === 'android') {
-  STATUS_BAR_HEIGHT = 64;
-}
+var STATUS_BAR_HEIGHT = 64
 
 var options = {
   title: 'Select Avatar',

@@ -25,19 +25,6 @@ export default class CustomView extends React.Component {
             console.error('An error occurred', err);
           });
         }}>
-          <MapView
-            style={[styles.mapView, this.props.mapViewStyle]}
-            region={{
-              latitude: this.props.currentMessage.location.latitude,
-              longitude: this.props.currentMessage.location.longitude,
-            }}
-            annotations={[{
-              latitude: this.props.currentMessage.location.latitude,
-              longitude: this.props.currentMessage.location.longitude,
-            }]}
-            scrollEnabled={false}
-            zoomEnabled={false}
-          />
         </TouchableOpacity>
       );
     }
