@@ -5,6 +5,7 @@ import {
   TouchableOpacity,
   View,
   Text,
+  Dimensions
 } from 'react-native';
 
 import CameraRollPicker from 'react-native-camera-roll-picker';
@@ -16,8 +17,6 @@ export default class CustomActions extends React.Component {
     this.state = {
       modalVisible: false,
     };
-    this.onActionsPress = this.onActionsPress.bind(this);
-    this.selectImages = this.selectImages.bind(this);
   }
 
   setImages(images) {
@@ -32,7 +31,7 @@ export default class CustomActions extends React.Component {
     this.setState({modalVisible: visible});
   }
 
-  onActionsPress() {
+  onActionsPress =()=> {
     const options = ['Choose From Library', 'Send Location', 'Cancel'];
     const cancelButtonIndex = options.length - 1;
     this.context.actionSheet().showActionSheetWithOptions({
@@ -63,7 +62,7 @@ export default class CustomActions extends React.Component {
     });
   }
 
-  selectImages(images) {
+  selectImages =(images)=> {
     this.setImages(images);
   }
 
@@ -84,7 +83,15 @@ export default class CustomActions extends React.Component {
     );
   }
 
+  onSelectImage = ()=> {
+    this.setModalVisible(false);
+    if( this.props.handleImage ){
+      this.props.handleImage( this.getImages() );
+    }
+  }
+
   render() {
+    var self = this;
     return (
       <TouchableOpacity
         style={[styles.container, this.props.containerStyle]}
@@ -98,10 +105,21 @@ export default class CustomActions extends React.Component {
             this.setModalVisible(false);
           }}
         >
+          <View style={styles.nav}>
+            <TouchableOpacity
+              onPress={this.onSelectImage}
+            >
+              <Text
+                style={styles.buttonText}
+              >
+                Select
+              </Text>
+            </TouchableOpacity>
+          </View>
           <CameraRollPicker
             maximum={10}
             imagesPerRow={4}
-            callback={this.selectImages}
+            callback={self.selectImages}
             selected={[]}
           />
         </Modal>
@@ -111,12 +129,18 @@ export default class CustomActions extends React.Component {
   }
 }
 
+const windowWidth = Dimensions.get("window").width;
+
 const styles = StyleSheet.create({
   container: {
     width: 26,
     height: 26,
     marginLeft: 10,
     marginBottom: 10,
+  },
+  nav:{
+    height:64,
+    width:windowWidth
   },
   wrapper: {
     borderRadius: 13,
@@ -130,6 +154,15 @@ const styles = StyleSheet.create({
     fontSize: 16,
     backgroundColor: 'transparent',
     textAlign: 'center',
+  },
+  buttonText: {
+    color: '#157efb',
+    fontSize: 16,
+    justifyContent:'center',
+    textAlign: 'right',
+    paddingTop:20,
+    paddingRight:10,
+    lineHeight:44
   },
 });
 

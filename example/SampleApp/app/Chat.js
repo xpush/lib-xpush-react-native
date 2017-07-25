@@ -23,7 +23,6 @@ import CustomView from './CustomView';
 var Communications = require('react-native-communications');
 var XPush = require( 'react-native-xpush-client' );
 
-var ImagePicker = require('react-native-image-picker');
 import ActionButton from 'react-native-action-button';
 
 
@@ -42,7 +41,7 @@ var options = {
 
 var userId = 'user01';
 var deviceId = 'web';
-XPush.init( 'http://192.168.0.6:8080', 'messengerx', userId, deviceId );
+XPush.init( 'https://chat.gslook.com:8080', 'messengerx', userId, deviceId );
 
 class Chat extends Component {
 
@@ -242,6 +241,7 @@ class Chat extends Component {
       return (
         <CustomActions
           {...props}
+          handleImage={this.handleImage}
         />
       );
     }
@@ -326,30 +326,19 @@ class Chat extends Component {
     }
   }
 
-  handleImagePicker(){
-    ImagePicker.showImagePicker(options, (response) => {
-      console.log('Response = ', response);
+  handleImage=(images)=>{
 
-      if (response.didCancel) {
-        console.log('User cancelled photo picker');
+    console.log( images );
+
+    /**
+    XPush.sendImage( response.uri,
+      function( progress ){
+        console.log( progress );
+      },function( err, result ){
+        console.log( result );
       }
-      else if (response.error) {
-        console.log('ImagePicker Error: ', response.error);
-      }
-      else if (response.customButton) {
-        console.log('User tapped custom button: ', response.customButton);
-      }
-      else {
-        console.log( response.uri );
-        XPush.sendImage( response.uri,
-          function( progress ){
-            console.log( progress );
-          },function( err, result ){
-            console.log( result );
-          }
-        );
-      }
-    });
+    );
+    */
   }
 
 }
