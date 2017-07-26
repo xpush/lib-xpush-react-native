@@ -83,6 +83,10 @@ export default class CustomActions extends React.Component {
     );
   }
 
+  onClose =()=> {
+    this.setModalVisible(false);
+  }
+
   onSelectImage = ()=> {
     this.setModalVisible(false);
     if( this.props.handleImage ){
@@ -107,10 +111,20 @@ export default class CustomActions extends React.Component {
         >
           <View style={styles.nav}>
             <TouchableOpacity
+              onPress={this.onClose}
+            >
+              <Text
+                style={styles.buttonLeftText}
+              >
+                Close
+              </Text>
+            </TouchableOpacity>
+            <View style={{flex:1}}/>
+            <TouchableOpacity
               onPress={this.onSelectImage}
             >
               <Text
-                style={styles.buttonText}
+                style={styles.buttonRightText}
               >
                 Select
               </Text>
@@ -140,7 +154,8 @@ const styles = StyleSheet.create({
   },
   nav:{
     height:64,
-    width:windowWidth
+    width:windowWidth,
+    flexDirection:'row'
   },
   wrapper: {
     borderRadius: 13,
@@ -155,7 +170,16 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent',
     textAlign: 'center',
   },
-  buttonText: {
+  buttonLeftText: {
+    color: '#157efb',
+    fontSize: 16,
+    justifyContent:'center',
+    textAlign: 'left',
+    paddingTop:20,
+    paddingLeft:10,
+    lineHeight:44
+  },
+  buttonRightText: {
     color: '#157efb',
     fontSize: 16,
     justifyContent:'center',

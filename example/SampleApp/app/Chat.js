@@ -327,18 +327,18 @@ class Chat extends Component {
   }
 
   handleImage=(images)=>{
+    
+    for( var inx in images ){
+      XPush.sendImage( images[inx].uri,
+        function( progress ){
+          console.log( progress );
+        },function( err, result ){
+          console.log( err );
+          console.log( result );
+        }
+      );
+    }
 
-    console.log( images );
-
-    /**
-    XPush.sendImage( response.uri,
-      function( progress ){
-        console.log( progress );
-      },function( err, result ){
-        console.log( result );
-      }
-    );
-    */
   }
 
 }
